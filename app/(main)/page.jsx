@@ -31,8 +31,9 @@ const page = () => {
               height={20}
               className="object-contain"
             />
-            <p className="text-sm text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p className="text-xs text-white">
+              Get Started with Our Expert Services—Fast, Easy, and Affordable
+              Protection for Your Business.
             </p>
           </div>
           <Link href="tel:+13104244909" className="flex-center">
