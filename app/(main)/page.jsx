@@ -25,7 +25,7 @@ const page = () => {
           />
           <div className="flex-center gap-2 max-md:hidden">
             <Image
-              src={`/images/Bell_Fill.png`}
+              src={`/images/bell-fill.png`}
               alt="Bell"
               width={20}
               height={20}
@@ -303,7 +303,7 @@ const page = () => {
 
         {/* Contact Us */}
         <section className="bg-color-primary-gradient relative">
-          <div className="section-center flex items-center justify-between max-md:flex-col text-white py-32 px-28 max-md:px-8 max-md:py-24 max-md:pt-20">
+          <div className="flex-center max-md:flex-col text-white py-32 gap-44 max-md:gap-1 max-md:py-24 max-md:pt-20">
             <div>
               <div className="flex items-center gap-2 max-md:gap-0 max-md:flex-col">
                 <p className="text-sm font-normal max-md:mb-1">Call us at:</p>
@@ -321,13 +321,13 @@ const page = () => {
                   support@secureyourmark.com
                 </Link>
               </div>
-              <Image
+              {/* <Image
                 src={`/images/contact-logo.png`}
                 alt="contact-logo"
                 width={300}
                 height={80}
                 className="object-contain absolute left-0 max-md:bottom-[-10px]"
-              />
+              /> */}
             </div>
             <div className="col-flex gap-4 max-md:gap-2 max-w-[300px]">
               <div className="flex gap-2">
