@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.flex-evenly {
+  @apply flex justify-evenly items-center;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.bg-form-body {
+  @apply bg-top bg-fixed bg-no-repeat bg-beams fixed top-0 left-0 w-full h-full z-[-999999];
+}
+
+.formOverly {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0b206e8f;
+}
+
+.text-color-primary {
+  @apply text-[#F25601];
+}
+
+.text-color-secondary {
+  @apply text-[#141C2F];
+}
+
+.bg-color-primary {
+  @apply bg-[#F25601];
+}
+
+.col-flex {
+  @apply flex flex-col;
+}
+
+.section-center {
+  @apply max-w-7xl m-auto;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+
+.animate-left-to-r {
+  animation: slide-in-right 1.5s linear infinite;
+}
+
+@keyframes slide-in-down {
+  0% {
+    transform: translateY(-70%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+}
+
+.animate-down-to-r {
+  animation: slide-in-down 1.5s linear infinite;
+}
+
+@keyframes expand-in-out {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-expand {
+  animation: expand-in-out 1s ease-in-out infinite;
+}
+
+.custom-shadow {
+  box-shadow: 0px 0px 10px 3px #f1efeffa;
+}
+
+.custom-accordion-item::after {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  background: #f25601;
+  position: absolute;
+  border-radius: 200px;
+  top: 16px;
+  left: 0;
+}
+
+.custom-accordion-item button {
+  @apply py-3 outline-none;
+}
+
+.bg-color-primary-gradient {
+  background: linear-gradient(90.49deg, #ff8d50 0.36%, #f25601 99.58%);
+}
+
+.bg-color-footer-gradient {
+  background: linear-gradient(102.29deg, #002654 0%, #080e1c 100%);
+}
+
+.swiper-slide {
+  margin-right: 1.25rem !important;
+}
+
+.mySwiper {
+  padding-bottom: 20px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f25601 !important;
+}
+
+/* for mobile device */
+@media not all and (min-width: 768px) {
+  .swiper-slide {
+    margin-right: 1px !important;
+  }
+}
