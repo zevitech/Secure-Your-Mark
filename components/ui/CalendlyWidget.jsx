@@ -19,7 +19,7 @@ function CalendlyWidget() {
     <div
       className="calendly-inline-widget"
       data-url="https://calendly.com/legaltrademarkoffice"
-      style={{ minWidth: "320px", height: "700px" }}
+      style={{ minWidth: "320px", height: "550px" }}
     ></div>
   );
 }

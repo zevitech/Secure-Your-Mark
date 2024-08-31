@@ -49,6 +49,7 @@ const StepOne = () => {
   const [state, setState] = useState("");
   const [zip, setZip] = useState("");
   const [phone, setPhone] = useState("");
+  const [preferredPhone, setPreferredPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
 
@@ -68,6 +69,7 @@ const StepOne = () => {
   const stateRef = useRef(null);
   const zipRef = useRef(null);
   const phoneRef = useRef(null);
+  const preferredPhoneRef = useRef(null);
   const emailRef = useRef(null);
 
   // validate the phone number
@@ -113,6 +115,11 @@ const StepOne = () => {
     } else if (!validatePhoneNumber(phone)) {
       tempErrors.phone = "Invalid phone number";
     }
+    if (!preferredPhone) {
+      tempErrors.preferredPhone = "Preferred Phone number is required";
+    } else if (!validatePhoneNumber(preferredPhone)) {
+      tempErrors.preferredPhone = "Invalid phone number";
+    }
     if (!email) {
       tempErrors.email = "Email address is required";
     } else if (!validator.validate(email)) {
@@ -150,6 +157,7 @@ const StepOne = () => {
         state: stateRef,
         zip: zipRef,
         phone: phoneRef,
+        phone: preferredPhoneRef,
         email: emailRef,
       };
       // errorRefs[firstErrorField].current.scrollIntoView({ behavior: "smooth" });if (firstErrorField)
@@ -188,6 +196,7 @@ const StepOne = () => {
       state,
       zip,
       phone,
+      preferredPhone,
       email,
       customer_ID: Math.floor(Math.random() * 90000 + 10000),
       zoho_step: 1,
@@ -567,17 +576,6 @@ const StepOne = () => {
           </InputCol>
           <InputCol>
             <Input
-              name="zipCode"
-              type="number"
-              variant="underlined"
-              label="Zip Code"
-              isInvalid={!!errors.zip}
-              errorMessage={errors.zip}
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-              ref={zipRef}
-            />
-            <Input
               name="phone"
               type="number"
               variant="underlined"
@@ -588,8 +586,30 @@ const StepOne = () => {
               onChange={(e) => setPhone(e.target.value)}
               ref={phoneRef}
             />
+            <Input
+              name="preferred_phone"
+              type="number"
+              variant="underlined"
+              label="Preferred Phone Number"
+              isInvalid={!!errors.preferredPhone}
+              errorMessage={errors.preferredPhone}
+              value={preferredPhone}
+              onChange={(e) => setPreferredPhone(e.target.value)}
+              ref={preferredPhoneRef}
+            />
           </InputCol>
           <InputCol>
+            <Input
+              name="zipCode"
+              type="number"
+              variant="underlined"
+              label="Zip Code"
+              isInvalid={!!errors.zip}
+              errorMessage={errors.zip}
+              value={zip}
+              onChange={(e) => setZip(e.target.value)}
+              ref={zipRef}
+            />
             <Input
               name="email"
               type="email"
