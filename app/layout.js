@@ -21,18 +21,19 @@ export default function RootLayout({ children }) {
       <Script
         id="tawkTo"
         type="text/javascript"
+        strategy="afterInteractive" // Ensures the script is loaded after the page becomes interactive
         dangerouslySetInnerHTML={{
           __html: `
-              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-              (function(){
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
               var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
               s1.async=true;
-              s1.src='https://embed.tawk.to/669c6bd9becc2fed69284ba7/1i39gaj7r';
+              s1.src='https://embed.tawk.to/65c65f260ff6374032cb5fa4/1hm7e7bu5';
               s1.charset='UTF-8';
               s1.setAttribute('crossorigin','*');
               s0.parentNode.insertBefore(s1,s0);
-              })();
-            `,
+            })();
+          `,
         }}
       />
 
