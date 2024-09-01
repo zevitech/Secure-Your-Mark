@@ -657,7 +657,7 @@ const StepOne = () => {
 
         {/* Google ReCAPTCHA */}
         <ReCAPTCHA
-          sitekey={`6Lc5jjMqAAAAAOsDBvyaokP53i0oNol7ZLd-ng2k`}
+          sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}
           onChange={ReCAPTCHAHandle}
         />
         {!reChaptcha && (
