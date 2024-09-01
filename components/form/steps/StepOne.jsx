@@ -25,6 +25,7 @@ import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
 import { LuLoader } from "react-icons/lu";
 import { IoMdLock } from "react-icons/io";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const StepOne = () => {
   const router = useRouter();
@@ -52,6 +53,8 @@ const StepOne = () => {
   const [preferredPhone, setPreferredPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
+  const [reChaptcha, setReChaptcha] = useState("");
+  const [preferredTime, setPreferredTime] = useState("");
 
   // Refs for error fields
   const protectNameRef = useRef(null);
@@ -71,6 +74,8 @@ const StepOne = () => {
   const phoneRef = useRef(null);
   const preferredPhoneRef = useRef(null);
   const emailRef = useRef(null);
+  const reChaptchaRef = useRef(null);
+  const preferredTimeRef = useRef(null);
 
   // validate the phone number
   const validatePhoneNumber = (phoneNumber) => {
@@ -125,9 +130,19 @@ const StepOne = () => {
     } else if (!validator.validate(email)) {
       tempErrors.email = "Invalid email address";
     }
+    if (!reChaptcha) {
+      tempErrors.reChaptcha = "Please verify that you are not a robot";
+    }
+    if (!preferredTime) {
+      tempErrors.preferredTime = "Please enter your preferred time to call you";
+    }
 
     setErrors(tempErrors);
     return Object.keys(tempErrors)[0]; // Return the first error key
+  };
+
+  const ReCAPTCHAHandle = (value) => {
+    setReChaptcha(value);
   };
 
   // Handle form submission
@@ -159,6 +174,8 @@ const StepOne = () => {
         phone: phoneRef,
         phone: preferredPhoneRef,
         email: emailRef,
+        reChaptcha: reChaptchaRef,
+        preferredTime: preferredTimeRef,
       };
       // errorRefs[firstErrorField].current.scrollIntoView({ behavior: "smooth" });if (firstErrorField)
       if (errorRefs[firstErrorField] && errorRefs[firstErrorField].current) {
@@ -178,6 +195,7 @@ const StepOne = () => {
     }
 
     const stepOne = {
+      customer_ID: Math.floor(Math.random() * 90000 + 10000),
       wantToProtect,
       protectName,
       sloganName,
@@ -198,7 +216,7 @@ const StepOne = () => {
       phone,
       preferredPhone,
       email,
-      customer_ID: Math.floor(Math.random() * 90000 + 10000),
+      preferredTime,
       zoho_step: 1,
     };
 
@@ -622,7 +640,34 @@ const StepOne = () => {
               ref={emailRef}
             />
           </InputCol>
+          <InputCol>
+            <Input
+              name="preferredTime"
+              type="text"
+              variant="underlined"
+              label="Enter Your Preferred Time To Call"
+              isInvalid={!!errors.preferredTime}
+              errorMessage={errors.preferredTime}
+              value={preferredTime}
+              onChange={(e) => setPreferredTime(e.target.value)}
+              ref={preferredTimeRef}
+            />
+          </InputCol>
         </FieldContainer>
+
+        {/* Google ReCAPTCHA */}
+        <ReCAPTCHA
+          sitekey={`6Lc5jjMqAAAAAOsDBvyaokP53i0oNol7ZLd-ng2k`}
+          onChange={ReCAPTCHAHandle}
+        />
+        {!reChaptcha && (
+          <p
+            ref={reChaptchaRef}
+            className="text-[#f31260] text-sm mt-3 mb-2 capitalize"
+          >
+            {errors.reChaptcha}
+          </p>
+        )}
 
         {/* next or previous button */}
         <div className="my-10 gap-5 flex-between">

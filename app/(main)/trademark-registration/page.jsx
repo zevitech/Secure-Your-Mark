@@ -187,7 +187,7 @@ const page = () => {
         </section>
 
         {/* What can be Trademarked */}
-        <section className="flex-center max-md:flex-col gap-20 max-md:gap-12 bg-[#fffbf9] py-28">
+        <section className="flex-center max-md:flex-col gap-20 max-md:gap-12 bg-[#fffbf9] py-28 max-md:px-7">
           <div className="bg-white px-10 py-14 rounded-md custom-shadow">
             <h1 className="text-2xl font-bold text-color-secondary mb-4">
               Can be Trademarked
@@ -217,7 +217,7 @@ const page = () => {
               <h1>{`What Can and Can't Be`} </h1>
               <h1 className="text-color-primary">Trademarked?</h1>
             </div>
-            <div className="bg-white px-10 py-14 rounded-md custom-shadow w-[400px]">
+            <div className="bg-white px-10 py-14 rounded-md custom-shadow w-[400px] max-md:w-full">
               <ul className="flex flex-col gap-3 ">
                 {canNotBeTrademarked.map((item) => (
                   <li key={item.id} className="flex items-start gap-3">
