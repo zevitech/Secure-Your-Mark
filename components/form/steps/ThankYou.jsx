@@ -62,8 +62,9 @@ const ThankYou = () => {
               Thank You, Payment Done!
             </h1>
             <p className="text-slate-600 text-base mt-5">
-              We have received your application. Please wait for a call from one
-              of our specialists regarding your trademark application.
+              Thank you for submitting your application. Please schedule a call
+              with one of our representative to discuss the next steps for
+              trademark application.
             </p>
           </div>
           <br />

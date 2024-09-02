@@ -26,7 +26,7 @@ const StepThree = () => {
     setIsLoading(true);
     dispatch(saveStepThree({ packageName, price })); // store data to state
 
-    return router.push("/trademark-register/step-4");
+    return router.push("/trademark-register/payment");
   };
 
   return (
@@ -75,11 +75,12 @@ const StepThree = () => {
           >
             Previous
           </Button>
-          <p className="text-md max-md:text-sm text-orange-600 mb-16 mt-7 font-semibold">
-            Note: Once your search results have been reviewed and our
-            specialists have curated your trademark application, Secure Your
-            Mark will collect the necessary fees and pay the discounted TEAS
-            Standard electronic filing fee of $350 on your behalf.
+          <p className="text-md max-md:text-sm text-slate-800 mb-16 mt-7 font-medium">
+            <span className="text-red-500 font-bold">Note:</span> Once your
+            search results have been reviewed and our specialists have curated
+            your trademark application, Secure Your Mark will collect the
+            necessary fees and pay the discounted TEAS Standard electronic
+            filing fee of $350 on your behalf.
           </p>
         </div>
       </section>

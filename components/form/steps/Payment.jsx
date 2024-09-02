@@ -45,8 +45,9 @@ const Payment = () => {
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
 
-  const nestedLeadData = useSelector((state) => state.form);
   const stepFourData = nestedLeadData.stepFour;
+  const nestedLeadData = useSelector((state) => state.form);
+  const stepThreeData = useSelector((state) => state.form.stepThree);
 
   const handleCardExpiryChange = (e) => {
     const allowedChars = /^[0-9/]*$/;
@@ -134,7 +135,7 @@ const Payment = () => {
   );
 
   // page authorization | redirect if previous step has no data
-  if (Object.keys(stepFourData).length === 0) {
+  if (Object.keys(stepThreeData).length === 0) {
     return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
   }
 
