@@ -45,7 +45,7 @@ const Payment = () => {
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
 
-  const stepFourData = nestedLeadData.stepFour;
+  // const stepFourData = nestedLeadData.stepFour;
   const nestedLeadData = useSelector((state) => state.form);
   const stepThreeData = useSelector((state) => state.form.stepThree);
 
@@ -84,15 +84,15 @@ const Payment = () => {
       { title: "Office Action Response", amount: 0 },
     ];
 
-    if (stepFourData.rushAmount !== 0) {
-      baseDetails.push({
-        title: "Rush processing",
-        amount: stepFourData.rushAmount,
-      });
-    }
+    // if (stepFourData.rushAmount !== 0) {
+    //   baseDetails.push({
+    //     title: "Rush processing",
+    //     amount: stepFourData.rushAmount,
+    //   });
+    // }
 
     return baseDetails;
-  }, [nestedLeadData, stepFourData]);
+  }, [nestedLeadData]);
 
   //count the total and add to total amount into data object
   const totalAmount = orderDetails.reduce(
