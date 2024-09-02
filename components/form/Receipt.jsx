@@ -8,10 +8,7 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Receipt = () => {
   const nestedLeadData = useSelector((state) => state.form);
-  const totalPrice =
-    nestedLeadData.stepFour.isRushProcessing === true
-      ? nestedLeadData.stepThree.price + nestedLeadData.stepFour.rushAmount
-      : nestedLeadData.stepThree.price;
+  const totalPrice = nestedLeadData.stepThree.price;
 
   const today = new Date().toLocaleDateString(undefined, {
     year: "numeric",
@@ -40,7 +37,7 @@ const Receipt = () => {
 
         <div className="flex flex-col gap-2 items-end">
           <h1 className="text-slate-700 font-bold text-lg max-md:text-lg uppercase">
-            receipt #{nestedLeadData.stepFour.receipt_ID}
+            receipt #{nestedLeadData.stepThree.receipt_ID}
           </h1>
           <p className="text-sm"> {today}</p>
           <p className="text-sm">
@@ -86,17 +83,6 @@ const Receipt = () => {
             <p className="w-full bg-slate-400 h-[1px]"></p>
             <p className="text-slate-700 font-normal">$0.00</p>
           </div>
-          {nestedLeadData.stepFour.isRushProcessing === true && (
-            <div className="flex flex-1 items-center gap-3 py-1">
-              <p className="text-slate-500 font-thin flex-none text-sm">
-                Rush processing
-              </p>
-              <p className="w-full bg-slate-400 h-[1px]"></p>
-              <p className="text-slate-700 font-normal">
-                ${nestedLeadData.stepFour.rushAmount}
-              </p>
-            </div>
-          )}
 
           <div className="flex flex-1 text-slate-700 items-center gap-3 border-t-2 border-dotted border-slate-600 py-1 mt-4 pt-3">
             <b className="flex-none text-sm">Sub Total</b>

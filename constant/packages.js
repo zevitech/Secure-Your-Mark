@@ -28,7 +28,7 @@ export const _135_USD = [
       "1 Month of free trademark monitoring included to ensure no infringements on your mark are filed.",
   },
   {
-    title: "Cease & Desist Letter",
+    title: "Office Action",
     description:
       "In the event that you find an infringing mark, we will provide a Cease and Desist template for you to deliver to your infringing party.",
   },
@@ -58,7 +58,7 @@ export const _235_USD = [
   },
   ,
   {
-    title: "Cease & Desist Letter",
+    title: "Office Action",
     description:
       "In the event that you find an infringing mark, we will provide a Cease and Desist template for you to deliver to your infringing party.",
   },

@@ -22,7 +22,7 @@ export async function POST(req) {
                                 <td style="color: #005ea2; font-weight: 800; font-size: 24px;">Secure Your Mark</td>
                                 <td align="right">
                                   <h2 style="color: #334155; font-weight: 700; font-size: 20px; text-transform: uppercase; margin: 0;">Receipt #${
-                                    data?.nestedLeadData?.stepFour?.receipt_ID
+                                    data?.nestedLeadData?.stepThree?.receipt_ID
                                   }</h2>
                                   <p style="font-size: 14px; color: #64748b; margin: 0;">${
                                     data.today
@@ -63,21 +63,6 @@ export async function POST(req) {
                                 <td style="color: #475569; font-weight: 500; font-size: 14px;">Office Action Response</td>
                                 <td style="color: #0f172a; font-weight: 500; font-size: 14px;" align="right">$0.00</td>
                               </tr>
-                              ${
-                                data.nestedLeadData?.stepFour
-                                  ?.isRushProcessing === true &&
-                                `<tr>
-                                    <td style="color: #475569; font-weight: 500; font-size: 14px;">
-                                      Rush processing
-                                    </td>
-                                    <td
-                                      style="color: #0f172a; font-weight: 500; font-size: 14px;"
-                                      align="right"
-                                    >
-                                      $${data.nestedLeadData.stepFour?.rushAmount}
-                                    </td>
-                                  </tr>`
-                              }
                             </table>
 
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top: 2px dotted #0f172a; margin-top: 20px; padding-top: 10px;">

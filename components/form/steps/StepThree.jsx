@@ -24,7 +24,14 @@ const StepThree = () => {
   // handle form submission
   const handleNext = ({ packageName, price }) => {
     setIsLoading(true);
-    dispatch(saveStepThree({ packageName, price })); // store data to state
+    dispatch(
+      saveStepThree({
+        packageName,
+        price,
+        previous: true,
+        receipt_ID: Math.floor(Math.random() * 900000 + 100000),
+      })
+    ); // store data to state
 
     return router.push("/trademark-register/payment");
   };
