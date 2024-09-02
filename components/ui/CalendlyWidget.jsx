@@ -18,7 +18,7 @@ function CalendlyWidget() {
   return (
     <div
       className="calendly-inline-widget w-[400px] h-[550px] max-md:w-full"
-      data-url="https://calendly.com/legaltrademarkoffice"
+      data-url="https://calendly.com/secureyourmark/trademark-meeting"
     ></div>
   );
 }
