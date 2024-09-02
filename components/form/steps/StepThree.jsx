@@ -1,7 +1,7 @@
 "use client";
 
 import Package from "../Package";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NormalLabel from "../NormalLabel";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@nextui-org/react";
@@ -33,6 +33,7 @@ const StepThree = () => {
     <>
       <section className="m-auto w-full flex flex-col gap-9 max-md:gap-4 mt-16 max-md:mt-10">
         {isLoading && <PageLoader />}
+        {/* <PageLoader /> */}
         <div className="flex flex-col gap-3 m-auto w-[700px] px-4 max-md:w-auto">
           <h1 className="text-slate-600 font-semibold text-3xl max-md:text-2xl">
             Choose a Package
@@ -43,21 +44,21 @@ const StepThree = () => {
         </div>
         <div className="flex justify-center max-md:flex-col max-md:items-center gap-7 pb-11">
           <Package
-            price={49}
+            price={35}
             packageName={`Basic`}
             complementaryTreat={`+ USPTO Fee $350/Class*`}
             rows={_35_USD}
             handleNext={handleNext}
           />
           <Package
-            price={149}
+            price={135}
             packageName={`Standard`}
             complementaryTreat={`+ USPTO Fee $350/Class*`}
             rows={_135_USD}
             handleNext={handleNext}
           />
           <Package
-            price={249}
+            price={235}
             badge={true}
             packageName={`Premium`}
             complementaryTreat={`+ USPTO Fee $350/Class*`}
@@ -74,11 +75,11 @@ const StepThree = () => {
           >
             Previous
           </Button>
-          <p className="text-sm max-md:text-xs text-slate-500 mb-16 mt-7">
-            Once your search results have been reviewed and our specialists have
-            curated your trademark application, Secure Your Mark will collect
-            the necessary fees and pay the discounted TEAS Standard electronic
-            filing fee of $350 on your behalf.
+          <p className="text-md max-md:text-sm text-orange-600 mb-16 mt-7 font-semibold">
+            Note: Once your search results have been reviewed and our
+            specialists have curated your trademark application, Secure Your
+            Mark will collect the necessary fees and pay the discounted TEAS
+            Standard electronic filing fee of $350 on your behalf.
           </p>
         </div>
       </section>
