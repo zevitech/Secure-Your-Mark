@@ -20,6 +20,12 @@ export const _35_USD = [
     description:
       "Have peace of mind knowing our specialists will research your mark, file for you, and deal with minor roadblocks",
   },
+  ,
+  {
+    title: "Same Day Filling",
+    description:
+      "Get your trademark filing completed the same day, ensuring swift protection for your brand",
+  },
 ];
 export const _135_USD = [
   {
@@ -71,5 +77,11 @@ export const _235_USD = [
     title: "Prepare & Reviewed by Our Specialists",
     description:
       "Have peace of mind knowing our specialists will research your mark, file for you, and deal with minor roadblocks",
+  },
+  ,
+  {
+    title: "Same Day Filling",
+    description:
+      "Get your trademark filing completed the same day, ensuring swift protection for your brand",
   },
 ];

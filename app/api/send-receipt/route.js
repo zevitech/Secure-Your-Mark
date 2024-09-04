@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   const data = await req.json();
-  const admin_email = "legaltrademarkoffice@gmail.com";
+  const admin_email = "secureyourmark@gmail.com";
   const receiptHtml = `
                         <!DOCTYPE html>
                         <html lang="en">
