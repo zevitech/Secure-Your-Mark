@@ -47,20 +47,20 @@ export async function POST(req) {
     // sending data to gmail account -end
 
     // sending data to ZOHO -start
-    try {
-      const zohoEndPoint =
-        "https://www.zohoapis.com/crm/v2/functions/get_lead_data_from_website/actions/execute?auth_type=apikey&zapikey=1003.eb4ba5dd90c3427d79be3ee781077455.953a892dc19d9aed59d99419e60d368b";
-      await axios
-        .post(zohoEndPoint, data)
-        .then((res) => {
-          console.log("zoho response", res.data);
-        })
-        .catch((err) => {
-          console.log("zoho error", err);
-        });
-    } catch (error) {
-      console.log("Error while saving zoho lead: " + error);
-    }
+    // try {
+    //   const zohoEndPoint =
+    //     "https://www.zohoapis.com/crm/v2/functions/get_lead_data_from_website/actions/execute?auth_type=apikey&zapikey=1003.eb4ba5dd90c3427d79be3ee781077455.953a892dc19d9aed59d99419e60d368b";
+    //   await axios
+    //     .post(zohoEndPoint, data)
+    //     .then((res) => {
+    //       console.log("zoho response", res.data);
+    //     })
+    //     .catch((err) => {
+    //       console.log("zoho error", err);
+    //     });
+    // } catch (error) {
+    //   console.log("Error while saving zoho lead: " + error);
+    // }
     // sending data to ZOHO -end
 
     return NextResponse.json({ success: true }, { status: 200 });
