@@ -49,6 +49,8 @@ const Payment = () => {
   const nestedLeadData = useSelector((state) => state.form);
   const stepThreeData = useSelector((state) => state.form.stepThree);
 
+  console.log(nestedLeadData);
+
   const handleCardExpiryChange = (e) => {
     const allowedChars = /^[0-9/]*$/;
     if (!allowedChars.test(e.key)) {
@@ -76,11 +78,11 @@ const Payment = () => {
   const orderDetails = useMemo(() => {
     const baseDetails = [
       {
-        title: "Trademark registration",
+        title: `Package Name: ${nestedLeadData.stepThree.packageName}`,
         amount: nestedLeadData.stepThree.price,
       },
-      { title: "Comprehensive Trademark Search", amount: 0 },
-      { title: "Trademark monitoring", amount: 0 },
+      { title: "Comprehensive Search", amount: 0 },
+      { title: "Monitoring", amount: 0 },
       { title: "Office Action Response", amount: 0 },
     ];
 
@@ -121,18 +123,18 @@ const Payment = () => {
   }, [isDataSent]);
 
   // Create the lineItems array
-  const lineItems = useMemo(
-    () => ({
-      lineItem: orderDetails.map((item, index) => ({
-        itemId: `item${index + 1}`,
-        name: item.title,
-        description: item.title,
+  const lineItems = useMemo(() => {
+    const lineItem = [
+      {
+        itemId: "item1",
+        name: `${nestedLeadData.stepThree.packageName} Package`,
+        description: " ",
         quantity: "1",
-        unitPrice: item.amount,
-      })),
-    }),
-    [orderDetails]
-  );
+        unitPrice: nestedLeadData.stepThree.price,
+      },
+    ];
+    return { lineItem };
+  }, [nestedLeadData]);
 
   // page authorization | redirect if previous step has no data
   if (Object.keys(stepThreeData).length === 0) {

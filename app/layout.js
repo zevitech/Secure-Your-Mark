@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
+import GlobalProvider from "./GlobalProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -88,7 +89,7 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        {children}
+        <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>
   );
