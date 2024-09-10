@@ -12,8 +12,8 @@ export async function POST(req) {
     clientSecret
   );
 
-  console.log("credentialEnvConfig+++++++++++++++++", credentialEnvConfig);
-  console.log("client+++++++++++++++++", client);
+  // console.log("credentialEnvConfig+++++++++++++++++", credentialEnvConfig);
+  // console.log("client+++++++++++++++++", client);
 
   // const credentialEnvConfig = new paypal.core.SandboxEnvironment(
   //   clientId,
@@ -24,6 +24,8 @@ export async function POST(req) {
 
   try {
     const request = new paypal.orders.OrdersCaptureRequest(body.orderId);
+    console.log("Request from capture order: " + request);
+
     request.requestBody({});
     const response = await client.execute(request);
 

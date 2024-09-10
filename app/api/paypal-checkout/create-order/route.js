@@ -18,8 +18,8 @@ export async function POST(req) {
 
   const client = new paypal.core.PayPalHttpClient(credentialEnvConfig);
 
-  console.log("credentialEnvConfig===============", credentialEnvConfig);
-  console.log("client============", client);
+  // console.log("credentialEnvConfig===============", credentialEnvConfig);
+  // console.log("client============", client);
 
   try {
     const request = new paypal.orders.OrdersCreateRequest();
@@ -36,7 +36,7 @@ export async function POST(req) {
       ],
     });
     const response = await client.execute(request);
-    // console.log("Orders created response: ", response);
+    console.log("Orders created response: ", response);
 
     return NextResponse.json({ order: response.result }, { status: 200 });
   } catch (error) {
