@@ -37,7 +37,7 @@ const Payment = () => {
   const orderDetails = useMemo(() => {
     const baseDetails = [
       {
-        title: `Package Name: ${nestedLeadData.stepThree.packageName}`,
+        title: `${nestedLeadData.stepThree.packageName}`,
         amount: nestedLeadData.stepThree.price,
       },
       { title: "Comprehensive Search", amount: 0 },
