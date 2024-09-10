@@ -29,8 +29,8 @@ export async function POST(req) {
         {
           amount: {
             currency_code: "USD",
-            // value: body.totalAmount,
-            value: 5,
+            value: body.totalAmount,
+            // value: 5,
           },
         },
       ],
