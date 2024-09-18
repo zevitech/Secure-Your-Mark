@@ -14,9 +14,8 @@ const Payment = () => {
   const [loader, setLoader] = useState(false);
   const [paymentError, setPaymentError] = useState("");
 
-  // const stepFourData = nestedLeadData.stepFour;
   const nestedLeadData = useSelector((state) => state.form);
-  const stepThreeData = useSelector((state) => state.form.stepThree);
+  const stepFourData = nestedLeadData.stepFour;
 
   // from the nested object, merge them into one object
   const leadData = useMemo(
@@ -141,9 +140,9 @@ const Payment = () => {
   }, [isDataSent]);
 
   // page authorization | redirect if previous step has no data
-  // if (Object.keys(stepThreeData).length === 0) {
-  //   return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
-  // }
+  if (Object.keys(stepFourData).length === 0) {
+    return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
+  }
 
   return (
     <div className="px-16 mt-16 mb-14 max-sm:px-2 max-md:mt-12 max-md:mb-8">

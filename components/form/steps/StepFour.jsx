@@ -1,22 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import FieldContainer from "../FieldContainer";
-import SmallLabel from "../SmallLabel";
 import { Button, Checkbox } from "@nextui-org/react";
 import ButtonContainer from "../ButtonContainer";
 import { useRouter } from "next/navigation";
 import { IoTimerOutline } from "react-icons/io5";
 import { useSelector, useDispatch } from "react-redux";
 import { saveStepFour } from "@/features/formSlice";
+import AcknowledgeText from "../AcknowledgeText";
 
 const StepFour = () => {
-  const rushAmount = 0.0;
   const router = useRouter();
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
-  const [isRushProcessing, setIsRushProcessing] = useState(false);
+  const [acknowledge, setAcknowledge] = useState(false);
+  const [checkboxError, setCheckboxError] = useState(false);
   const stepThreeData = useSelector((state) => state.form.stepThree);
 
   // page authorization | redirect if previous step has no data
@@ -29,11 +28,14 @@ const StepFour = () => {
     setIsLoading(true);
     e.preventDefault();
 
+    if (!acknowledge) {
+      setCheckboxError(true);
+      setIsLoading(false);
+      return;
+    }
+
     const data = {
-      isRushProcessing,
-      rushAmount: isRushProcessing ? rushAmount : 0,
-      previous: true,
-      receipt_ID: Math.floor(Math.random() * 900000 + 100000),
+      i_acknowledge: acknowledge,
     };
     dispatch(saveStepFour(data)); // store data to state
 
@@ -49,49 +51,77 @@ const StepFour = () => {
         encType="multipart/form-data"
       >
         <h1 className="text-slate-700 font-semibold text-2xl mb-5">
-          Add rush processing to expedite your application
+          IMPORTANT NOTICE: PLEASE READ AND ACKNOWLEDGE
         </h1>
         <div className="relative">
-          <Image
-            src={`/images/optional-bagde.png`}
-            alt="optional badge"
-            width={80}
-            height={10}
-            className="absolute right-[-5px] top-[-5px]"
-          />
           <FieldContainer>
-            <h1 className="text-[#03589c] font-medium text-2xl">
-              {`You're nearly finished!`}
-            </h1>
-            <h1 className="text-[#03589c] font-medium text-lg  ">
-              {`Do you need your order processed faster?`}
-            </h1>
-            <div className="flex gap-4 text-slate-700 mt-6 mb-3">
-              <IoTimerOutline className="text-2xl max-md:text-5xl" />
-              <div>
-                <p className="text-slate-700 text-sm font-bold">
-                  RUSH PROCESSING.
+            <div className="mb-2 flex flex-col gap-4">
+              <div className="flex flex-col gap-1">
+                <h4 className="text-[#03579ce0] font-bold text-md">
+                  1. MANDATORY FOLLOW-UP CALL
+                </h4>
+                <AcknowledgeText
+                  text={`After completing your service fee payment, you must answer a call from your assigned case analyst.
+                This call is essential for providing you with a trademark search and clearance report. The analyst will
+                help determine the relevant classifications for your trademark based on your business, typically
+                ranging from 2 to 4 classifications.`}
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <h4 className="text-[#03579ce0] font-bold text-md">
+                  2. NO FURTHER ACTION WITHOUT CALL
+                </h4>
+                <AcknowledgeText
+                  text={`Please note that without answering the follow-up call, we will not be able to proceed with your
+              trademark registration. `}
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <h4 className="text-[#03579ce0] font-bold text-md">
+                  3. FEDERAL FEE REQUIREMENT
+                </h4>
+                <AcknowledgeText
+                  text={`In addition to the service fee, a $350 federal fee per classification is required by the USPTO (United
+              States Patent and Trademark Office) for filing your trademark. This fee will be collected after we
+              have reviewed your application and prepared your trademark filing.`}
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <h4 className="text-[#03579ce0] font-bold text-md">
+                  ACKNOWLEDGEMENT
+                </h4>
+                <p className="text-sm opacity-80 font-bold ml-4 text-slate-800">
+                  {`- Agree to receive a follow-up call from your case analyst.`}
                 </p>
-                <p className="text-slate-700 text-sm font-bold">
-                  COMPLETED NEXT DAY WHEN TIME IS OF THE ESSENCE.
+                <p className="text-sm opacity-80 font-bold ml-4 text-slate-800">
+                  {`- Understand that without answering the call, the registration process cannot proceed.`}
+                </p>
+                <p className="text-sm opacity-80 font-bold ml-4 text-slate-800">
+                  {`- Acknowledge there is an additional federal fee of $350 per classification that must be paid to the
+                  USPTO after the application is prepared`}
                 </p>
               </div>
             </div>
 
-            <SmallLabel
-              text={`We know time is critical. With Rush Processing, we will complete your search results by the next business day, and file the application immediately after you have approved it.`}
-            />
             <Checkbox
-              isSelected={isRushProcessing}
-              onValueChange={setIsRushProcessing}
+              isSelected={acknowledge}
+              onChange={(e) => {
+                setAcknowledge(e.target.checked);
+                if (e.target.checked) setCheckboxError(false);
+              }}
               size="md"
+              isInvalid={checkboxError}
+              isRequired={true}
             >
-              <span className="text-orange-600">*</span>24-hour Expedited
-              Processing (Next Business Day):{" "}
-              <span className="text-orange-600 font-semibold">
-                ${rushAmount}.00 USD
-              </span>
+              <span className="text-orange-600">*</span> I acknowledge and agree
+              to the terms and conditions outlined above.
             </Checkbox>
+
+            {checkboxError && (
+              <p className="text-[#f31260] text-xs text-center mt-3">
+                Please tick the checkbox to process further.
+              </p>
+            )}
           </FieldContainer>
         </div>
 

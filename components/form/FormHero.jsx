@@ -44,7 +44,7 @@ const FormHero = ({ step }) => {
                 value: "text-foreground/60 text-slate-50 font-semibold",
               }}
               label=" "
-              value={step * 33.3}
+              value={step * 25}
               showValueLabel={true}
             />
           </div>

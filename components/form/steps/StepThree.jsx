@@ -33,7 +33,7 @@ const StepThree = () => {
       })
     ); // store data to state
 
-    return router.push("/trademark-register/payment");
+    return router.push("/trademark-register/step-4");
   };
 
   return (

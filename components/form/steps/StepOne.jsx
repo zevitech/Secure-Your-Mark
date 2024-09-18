@@ -1,13 +1,5 @@
 "use client";
 
-import axios from "axios";
-import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { saveStepOne } from "@/features/formSlice";
-import FieldContainer from "../FieldContainer";
-import BoldLabel from "../BoldLabel";
-import SmallLabel from "../SmallLabel";
-import TinyWarning from "../TinyWarning";
 import {
   Radio,
   RadioGroup,
@@ -15,7 +7,22 @@ import {
   Button,
   Select,
   SelectItem,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
 } from "@nextui-org/react";
+import { auth } from "@/firebase";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { saveStepOne } from "@/features/formSlice";
+import FieldContainer from "../FieldContainer";
+import BoldLabel from "../BoldLabel";
+import SmallLabel from "../SmallLabel";
+import TinyWarning from "../TinyWarning";
 import InputCol from "../InputCol";
 import { stateList, organizationTypes } from "@/constant";
 import { useRouter } from "next/navigation";
@@ -26,15 +33,18 @@ import Image from "next/image";
 import { LuLoader } from "react-icons/lu";
 import { IoMdLock } from "react-icons/io";
 import ReCAPTCHA from "react-google-recaptcha";
+import OTPInput from "react-otp-input";
+import { signInWithPhoneNumber, RecaptchaVerifier } from "firebase/auth";
 
 const StepOne = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isLoading, setIsLoading] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [ownedBy, setOwnedBy] = useState("individual");
   const [wantToProtect, setWantToProtect] = useState("name");
-  const [protectName, setProtectName] = useState("");
+  const [protectName, setProtectName] = useState("dsds");
   const [sloganName, setSloganName] = useState("");
   const [logo, setLogo] = useState("");
   const [formation, setFormation] = useState("us_based");
@@ -53,8 +63,14 @@ const StepOne = () => {
   const [preferredPhone, setPreferredPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
-  const [reChaptcha, setReChaptcha] = useState("");
-  const [preferredTime, setPreferredTime] = useState("");
+  const [reChaptcha, setReChaptcha] = useState(true);
+  const [preferredTime, setPreferredTime] = useState("sds");
+  const [otp, setOtp] = useState("");
+  const [recaptchaVerifier, setRecaptchaVerifier] = useState(null);
+  const [resendCountdown, setResendCountdown] = useState(0);
+  const [confirmationResult, setConfirmationResult] = useState(null);
+  const [otpError, setOtpError] = useState("");
+  const [resendLoading, setResendLoading] = useState(false);
 
   // Refs for error fields
   const protectNameRef = useRef(null);
@@ -72,7 +88,6 @@ const StepOne = () => {
   const stateRef = useRef(null);
   const zipRef = useRef(null);
   const phoneRef = useRef(null);
-  const preferredPhoneRef = useRef(null);
   const emailRef = useRef(null);
   const reChaptchaRef = useRef(null);
   const preferredTimeRef = useRef(null);
@@ -120,11 +135,6 @@ const StepOne = () => {
     } else if (!validatePhoneNumber(phone)) {
       tempErrors.phone = "Invalid phone number";
     }
-    if (!preferredPhone) {
-      tempErrors.preferredPhone = "Preferred Phone number is required";
-    } else if (!validatePhoneNumber(preferredPhone)) {
-      tempErrors.preferredPhone = "Invalid phone number";
-    }
     if (!email) {
       tempErrors.email = "Email address is required";
     } else if (!validator.validate(email)) {
@@ -141,16 +151,39 @@ const StepOne = () => {
     return Object.keys(tempErrors)[0]; // Return the first error key
   };
 
+  // ReCAPTCHA verification
   const ReCAPTCHAHandle = (value) => {
     setReChaptcha(value);
   };
 
-  // Handle form submission
-  const handleFormSubmit = async (e) => {
+  useEffect(() => {
+    const RV = new RecaptchaVerifier(auth, "recaptcha-container", {
+      size: "invisible",
+    });
+    setRecaptchaVerifier(RV);
+
+    return () => {
+      RV.clear();
+    };
+  }, [auth]);
+
+  // OTP resend countdown
+  useEffect(() => {
+    let timer;
+    if (resendCountdown > 0) {
+      timer = setTimeout(() => {
+        setResendCountdown((prevCountdown) => prevCountdown - 1);
+      }, 1000);
+    }
+    return () => clearTimeout(timer);
+  }, [resendCountdown]);
+
+  // handle OTP verification popup and send OTP to number
+  const OtpVerification = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    //return (stop) if there validation issue
+    //return (stop) if there is any input validation failed
     const firstErrorField = validateForm();
     if (firstErrorField) {
       setIsLoading(false);
@@ -172,12 +205,10 @@ const StepOne = () => {
         state: stateRef,
         zip: zipRef,
         phone: phoneRef,
-        phone: preferredPhoneRef,
         email: emailRef,
         reChaptcha: reChaptchaRef,
         preferredTime: preferredTimeRef,
       };
-      // errorRefs[firstErrorField].current.scrollIntoView({ behavior: "smooth" });if (firstErrorField)
       if (errorRefs[firstErrorField] && errorRefs[firstErrorField].current) {
         errorRefs[firstErrorField].current.scrollIntoView({
           behavior: "smooth",
@@ -193,7 +224,85 @@ const StepOne = () => {
       }
       return;
     }
+    setIsLoading(false);
 
+    // if all input field valid, then send OTP to phone number and open the modal
+    try {
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        `+1` + phone,
+        recaptchaVerifier
+      );
+      onOpen();
+      setResendCountdown(60);
+      setConfirmationResult(confirmationResult);
+    } catch (err) {
+      console.log("Failed to send OTP:", err);
+
+      if (err.code === "auth/invalid-phone-number") {
+        setErrors((...prev) => ({
+          ...prev,
+          phone: "Invalid phone number, Please enter a valid number.",
+        }));
+      } else if (err.code === "auth/too-many-requests") {
+        alert("Too many requests. Please try again.");
+      } else {
+        alert("Failed to send OTP. Please try again.");
+      }
+    }
+  };
+
+  // Verify the OTP
+  const verifyOtp = async () => {
+    setOtpError("");
+    setIsLoading(true);
+    try {
+      await confirmationResult?.confirm(otp);
+      handleFormSubmit();
+    } catch (error) {
+      console.log("Failed to verify OTP. Please check the OTP:", error);
+      setOtpError("Failed to verify OTP. Please check the OTP.");
+      setIsLoading(false);
+    }
+  };
+
+  // Resend the OTP
+  const requestOtp = async (e) => {
+    setResendCountdown(60);
+    setOtpError("");
+    setResendLoading(true);
+
+    if (!recaptchaVerifier) {
+      return setOtpError("Please verify that you are not a robot.");
+    }
+
+    try {
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        `+1` + phone,
+        recaptchaVerifier
+      );
+      setResendCountdown(60);
+      setConfirmationResult(confirmationResult);
+    } catch (err) {
+      console.log("Failed to resend OTP:", err);
+
+      if (err.code === "auth/invalid-phone-number") {
+        setErrors((...prev) => ({
+          ...prev,
+          phone: "Invalid phone number, Please enter a valid number.",
+        }));
+      } else if (err.code === "auth/too-many-requests") {
+        setOtpError("Too many requests. Please try again.");
+      } else {
+        setOtpError("Failed to send OTP. Please try again.");
+      }
+    }
+    setResendLoading(false);
+  };
+
+  // Handle form submission
+  const handleFormSubmit = async (e) => {
     const stepOne = {
       customer_ID: Math.floor(Math.random() * 90000 + 10000),
       wantToProtect,
@@ -251,7 +360,7 @@ const StepOne = () => {
       <form
         action=""
         method="post"
-        onSubmit={handleFormSubmit}
+        onSubmit={OtpVerification}
         encType="multipart/form-data"
       >
         <FieldContainer>
@@ -608,12 +717,12 @@ const StepOne = () => {
               name="preferred_phone"
               type="number"
               variant="underlined"
-              label="Preferred Phone Number"
-              isInvalid={!!errors.preferredPhone}
-              errorMessage={errors.preferredPhone}
+              label="Landline Number"
+              // isInvalid={!!errors.preferredPhone}
+              // errorMessage={errors.preferredPhone}
               value={preferredPhone}
               onChange={(e) => setPreferredPhone(e.target.value)}
-              ref={preferredPhoneRef}
+              // ref={preferredPhoneRef}
             />
           </InputCol>
           <InputCol>
@@ -645,13 +754,27 @@ const StepOne = () => {
               name="preferredTime"
               type="text"
               variant="underlined"
-              label="Enter Your Preferred Time To Call"
+              label="Enter Your Preferred Time To Call ( Must be Business Hours )"
               isInvalid={!!errors.preferredTime}
               errorMessage={errors.preferredTime}
               value={preferredTime}
               onChange={(e) => setPreferredTime(e.target.value)}
               ref={preferredTimeRef}
             />
+            {/* <Select
+              variant="underlined"
+              label="Do "
+              onChange={(e) => setState(e.target.value)}
+              isInvalid={!!errors.state}
+              errorMessage={errors.state}
+              ref={stateRef}
+            >
+              {stateList.map((state) => (
+                <SelectItem key={state.value} value={state.value}>
+                  {state.label}
+                </SelectItem>
+              ))}
+            </Select> */}
           </InputCol>
         </FieldContainer>
 
@@ -693,6 +816,86 @@ const StepOne = () => {
           $350 on your behalf.
         </p>
       </form>
+
+      {/* modal for OTP */}
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        size="sm"
+        isDismissable={false}
+        backdrop={"blur"}
+        hideCloseButton={true}
+        className="py-4"
+        placement="center"
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Phone OTP Verification
+              </ModalHeader>
+              <ModalBody>
+                <p className="text-xs mt-[-15px] mb-3">
+                  An OTP has been sent to your phone number. Please enter the
+                  OTP below to continue the process.
+                </p>
+                <OTPInput
+                  value={otp}
+                  onChange={setOtp}
+                  numInputs={6}
+                  renderSeparator={
+                    <span className="p-1 text-slate-300"> • </span>
+                  }
+                  renderInput={(props) => (
+                    <Input
+                      variant="bordered"
+                      onClick={() => setOtpError("")}
+                      {...props}
+                    />
+                  )}
+                />
+
+                {otpError && (
+                  <p className="text-[#f31260] text-sm mt-4 capitalize text-center">
+                    {otpError}
+                  </p>
+                )}
+              </ModalBody>
+              <ModalFooter className="mt-1 flex-between">
+                <Button
+                  color="danger"
+                  variant="light"
+                  size={`sm`}
+                  onPress={onClose}
+                >
+                  Edit Number
+                </Button>
+                <Button
+                  color="warning"
+                  variant="light"
+                  size={`sm`}
+                  onPress={requestOtp}
+                  isDisabled={resendCountdown > 0}
+                >
+                  {resendCountdown > 0
+                    ? `Resend in ${resendCountdown}s`
+                    : `Resend OTP`}
+                </Button>
+                <Button
+                  color="primary"
+                  size={`sm`}
+                  onPress={verifyOtp}
+                  isLoading={isLoading}
+                >
+                  Continue
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+
+      <div id="recaptcha-container" />
     </section>
   );
 };
