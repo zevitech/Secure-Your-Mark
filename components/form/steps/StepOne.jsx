@@ -44,7 +44,7 @@ const StepOne = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [ownedBy, setOwnedBy] = useState("individual");
   const [wantToProtect, setWantToProtect] = useState("name");
-  const [protectName, setProtectName] = useState("dsds");
+  const [protectName, setProtectName] = useState("");
   const [sloganName, setSloganName] = useState("");
   const [logo, setLogo] = useState("");
   const [formation, setFormation] = useState("us_based");
@@ -63,8 +63,8 @@ const StepOne = () => {
   const [preferredPhone, setPreferredPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
-  const [reChaptcha, setReChaptcha] = useState(true);
-  const [preferredTime, setPreferredTime] = useState("sds");
+  const [reChaptcha, setReChaptcha] = useState(false);
+  const [preferredTime, setPreferredTime] = useState("");
   const [otp, setOtp] = useState("");
   const [recaptchaVerifier, setRecaptchaVerifier] = useState(null);
   const [resendCountdown, setResendCountdown] = useState(0);
