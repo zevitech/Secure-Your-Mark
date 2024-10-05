@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <Script
         id="tawkTo"
         type="text/javascript"
-        strategy="afterInteractive" // Ensures the script is loaded after the page becomes interactive
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
