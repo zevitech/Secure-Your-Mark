@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <Script
         id="tawkTo"
         type="text/javascript"
-        strategy="afterInteractive" // Ensures the script is loaded after the page becomes interactive
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -80,14 +80,14 @@ export default function RootLayout({ children }) {
       </head>
       <body className={poppins.className}>
         {/* Google Tag Manager (noscript) */}
-        <noscript>
+        {/* <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PXZMCZM2"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
-        </noscript>
+        </noscript> */}
         {/* End Google Tag Manager (noscript) */}
         <GlobalProvider>{children}</GlobalProvider>
       </body>

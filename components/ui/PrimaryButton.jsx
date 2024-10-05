@@ -18,11 +18,14 @@ const PrimaryButton = ({ text, animate, size }) => {
         isLoading={isLoading}
         variant="shadow"
         onClick={handleButton}
-        className={`rounded-full  font-semibold bg-color-primary text-white ${
+        radius="md"
+        className={`font-semibold bg-color-primary text-white ${
           animate && `animate-expand`
-        } ${size === "md" && `px-8 py-5`} ${size === "lg" && `px-12 py-6`} ${
-          size === "xl" && `px-16 py-6`
-        } ${size === "2xl" && `w-[90%] py-8 text-xl`}`}
+        } ${size === "md" && ` px-8 py-5`} ${size === "lg" && `px-12 py-6`} ${
+          size === "xl" && ` px-16 py-6`
+        } ${size === "2xl" && ` w-[90%] py-8 text-xl`}${
+          size === "3xl" && ` px-20 py-9 text-2xl`
+        }`}
       >
         {text}
       </Button>

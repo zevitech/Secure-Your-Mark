@@ -37,6 +37,10 @@ a {
   @apply bg-top bg-fixed bg-no-repeat bg-beams fixed top-0 left-0 w-full h-full z-[-999999];
 }
 
+.direction-rtl {
+  direction: rtl;
+}
+
 .formOverly {
   position: absolute;
   width: 100%;
@@ -159,5 +163,8 @@ a {
 @media not all and (min-width: 768px) {
   .swiper-slide {
     margin-right: 1px !important;
+  }
+  .pcmb0 {
+    margin-bottom: 0px !important;
   }
 }

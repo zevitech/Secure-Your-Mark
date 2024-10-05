@@ -132,3 +132,98 @@ export const canNotBeTrademarked = [
       "For inventions like machines, goods, chemical formulas, or technical processes—",
   },
 ];
+
+export const trademarkStudy = [
+  {
+    icon: "amazon-icon.png",
+    heading: "Amazon Brand Registry",
+    details:
+      "Get access to special tools on Amazon by enrolling in Amazon Brand Registry. This enhances your brand's protection and provides a better experience for your customers.",
+  },
+  {
+    icon: "email-icon.png",
+    heading: "Business Formation",
+    details:
+      "Launching a startup? We handle everything to register your business trademark with no delays or rejections. Leave all the documentation to us and quickly register your company name.",
+  },
+  {
+    icon: "invoice-icon.png",
+    heading: "Trademark Registration",
+    details:
+      "Secure your brand by filing a trademark declaration with USPTO trademark registration. We provide the fastest trademark registration services to prevent fraudulent companies from copying your business's intellectual property. Start with trademark and brand registration today!",
+  },
+  {
+    icon: "copyright-icon.png",
+    heading: "Trademark Registration",
+    details:
+      "Need help with how to trademark a name or file a trademark for your business? Whether you want to apply for a trademark or file a trademark for your business to protect, we've got you covered with our seamless and easy online trademark registration process.",
+  },
+];
+
+export const steps = [
+  {
+    id: 1,
+    icon: "megnifine-icon.png",
+    heading: "Sign Up",
+    details:
+      "Provide your details and information about your trademark and business. Whether you need to file a trademark for your business or apply for a trademark, simply sign up to get started with our fastest trademark registration services.",
+  },
+  {
+    id: 2,
+    icon: "list-icon.png",
+    heading: "Select Package",
+    details:
+      "Choose the right package for your needs. We offer a range of options, whether you're looking to register a business trademark, register your company name, or get assistance with trademark and brand registration.",
+  },
+  {
+    id: 3,
+    icon: "user-list-icon.png",
+    heading: "Project Delivery",
+    details:
+      "Once you've selected your package, our team takes over. From filing with the USPTO for trademark registration to ensuring a smooth online trademark registration, we handle everything to deliver the best possible results for your project.",
+  },
+];
+
+export const howItWorks = [
+  {
+    icon: "hiw-1.png",
+    heading: "Free lawyer's check",
+    subHeading: "RESULT IN 24 HOURS",
+    details:
+      "Before you apply for a trademark, our legal team will conduct a thorough review to ensure your trademark meets the distinctiveness criteria required for USPTO trademark registration. Receive results and recommendations within 24 hours to begin the process of filing a trademark for your business.",
+  },
+  {
+    icon: "hiw-2.png",
+    heading: "Application drafting",
+    subHeading: "3-5 DAYS PROCESS",
+    details:
+      "After you sign up and provide your details, we will prepare and draft your trademark registration application. Once approved, we will file the trademark on your behalf and provide legal representation, helping you easily register your business trademark.",
+  },
+  {
+    icon: "hiw-3.png",
+    heading: "IPO examination",
+    subHeading: "3-12 MONTHS PERIOD",
+    details:
+      "Your application will be assessed by the appropriate Intellectual Property Office (IPO), where it will be published and reviewed for potential oppositions. This is a key step in the trademark and brand registration process, leading to successful online trademark registration.",
+  },
+  {
+    icon: "hiw-4.png",
+    heading: "10 year validity",
+    subHeading: "REGISTRATION COMPLETED",
+    details:
+      "Once your trademark registration is approved, it will be entered into the official register and granted a 10-year validity. Secure your brand with brand name trademark registration and ensure long-term protection.",
+  },
+];
+
+export const recentlyTrademarked = [
+  "dummy-brand.png",
+  "recently-trademarked-2.png",
+  "recently-trademarked-3.png",
+  "recently-trademarked-4.png",
+  "recently-trademarked-5.png",
+  "dummy-brand.png",
+  "recently-trademarked-2.png",
+  "recently-trademarked-3.png",
+  "recently-trademarked-4.png",
+  "recently-trademarked-5.png",
+];
