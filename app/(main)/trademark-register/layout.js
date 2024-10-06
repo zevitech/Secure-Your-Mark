@@ -78,6 +78,7 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
         <div className={`bg-form-body`}></div>
+
         <GlobalProvider>{children}</GlobalProvider>
       </body>
     </html>

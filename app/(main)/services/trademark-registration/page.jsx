@@ -4,11 +4,9 @@ import PageHero from "@/components/ui/PageHero";
 import Image from "next/image";
 import StatisticCountBox from "@/components/ui/StatisticCountBox";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { Button } from "@nextui-org/react";
 import Footer from "@/components/ui/Footer";
 import TestimonialSection from "@/components/ui/TestimonialSection";
 import PackageSection from "@/components/ui/PackageSection";
-import Link from "next/link";
 import JointBtn from "@/components/buttons/JointBtn";
 
 const page = () => {

@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
-import GlobalProvider from "./GlobalProvider";
+import GlobalProvider from "./(main)/trademark-register/GlobalProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -80,16 +80,19 @@ export default function RootLayout({ children }) {
       </head>
       <body className={poppins.className}>
         {/* Google Tag Manager (noscript) */}
-        {/* <noscript>
+        <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PXZMCZM2"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
-        </noscript> */}
+        </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <GlobalProvider>{children}</GlobalProvider>
+
+        {/* <GlobalProvider> */}
+        {children}
+        {/* </GlobalProvider> */}
       </body>
     </html>
   );

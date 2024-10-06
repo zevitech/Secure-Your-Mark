@@ -1,18 +1,10 @@
 import React from "react";
 import Header from "@/components/ui/Header";
 import PageHero from "@/components/ui/PageHero";
-import BrandCarousel from "@/components/ui/BrandCarousel";
 import Image from "next/image";
 import StatisticCountBox from "@/components/ui/StatisticCountBox";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import AttorneyCard from "@/components/ui/AttorneyCard";
-import { howItWorks, steps, trademarkStudy } from "@/constant";
-import { Button, Input, Textarea } from "@nextui-org/react";
-import TestimonialCarousel from "@/components/ui/TestimonialCarousel";
-import HeadLine from "@/components/ui/HeadLine";
 import Footer from "@/components/ui/Footer";
-import Link from "next/link";
-import BlogCard from "@/components/ui/BlogCard";
 import AboutAttorneyCard from "@/components/ui/AboutAttorneyCard";
 import HowItWorks from "@/components/ui/HowItWorks";
 import TestimonialSection from "@/components/ui/TestimonialSection";

@@ -3,7 +3,6 @@ import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
 import { Button } from "@nextui-org/react";
 import FaqAccordion from "@/components/ui/FaqAccordion";
-import FAQBox from "@/components/ui/FAQBox";
 
 const page = () => {
   return (
