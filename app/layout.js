@@ -1,12 +1,18 @@
 import "./globals.css";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins, Inria_Serif } from "next/font/google";
 import Script from "next/script";
 import GlobalProvider from "./(main)/trademark-register/GlobalProvider";
 
-const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: '--font-poppins',
+});
+
+const inriaSerif = Inria_Serif({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: '--font-inria',
 });
 
 export const metadata = {
@@ -78,7 +84,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="author" content="Secure Your Mark" />
       </head>
-      <body className={poppins.className}>
+      <body className={`${poppins.className} ${inriaSerif.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

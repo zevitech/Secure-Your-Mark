@@ -79,7 +79,7 @@ export default function App() {
                   <DropdownTrigger>
                     <Button
                       disableRipple
-                      className="p-0 bg-transparent data-[hover=true]:bg-transparent text-slate-700 font-medium text-medium hover:opacity-75"
+                      className="p-0 bg-transparent data-[hover=true]:bg-transparent text-slate-700 font-normal text-medium hover:opacity-75"
                       endContent={<BiChevronDown />}
                       radius="sm"
                       variant="light"
@@ -115,7 +115,7 @@ export default function App() {
             ) : (
               <NavbarItem isActive={pathname == item.route} className="px-2">
                 <Link
-                  className={`text-slate-700 font-medium text-medium hover:opacity-75 ${
+                  className={`text-slate-700 font-normal text-medium hover:opacity-75 ${
                     pathname == item.route && `text-color-primary`
                   }`}
                   href={`${item.route}`}
@@ -129,11 +129,12 @@ export default function App() {
         <NavbarItem className="px-2">
           <Button
             as={Link}
-            color="primary"
             href="/trademark-register"
+            color="primary"
             variant="ghost"
             onClick={() => setIsLoading(true)}
             isLoading={isLoading}
+            className="text-[#F25601] border-[#F25601] hover:bg-[#F25601] hover:text-[#fff] data-[hover=true]:!bg-[#F25601] py-5 rounded-[8px] font-inriaSerif"
           >
             Trademark Now
           </Button>

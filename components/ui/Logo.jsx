@@ -7,9 +7,8 @@ const Logo = ({ width }) => {
       <Image
         src={"/images/Secure-Your-Mark-Ry.png"}
         alt="Secure Your Mark"
-        width={width}
-        height={100}
-        className={`object-contain `}
+        width={85}
+        height={56}
       />
     </div>
   );

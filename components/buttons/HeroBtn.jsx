@@ -12,7 +12,7 @@ const HeroBtn = () => {
       as={Link}
       href="/trademark-register"
       color="primary"
-      className="px-12 py-7 text-md bg-color-primary max-md:w-full"
+      className="px-12 py-8 rounded-[10px] text-md bg-color-primary max-md:w-full font-inriaSerif font-[400]"
       radius="sm"
       onClick={() => setIsLoading(true)}
       isLoading={isLoading}
