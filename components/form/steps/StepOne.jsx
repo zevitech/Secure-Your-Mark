@@ -184,72 +184,79 @@ const StepOne = () => {
     setIsLoading(true);
 
     //return (stop) if there is any input validation failed
-    const firstErrorField = validateForm();
-    if (firstErrorField) {
-      setIsLoading(false);
 
-      // Scroll to the first error field
-      const errorRefs = {
-        protectName: protectNameRef,
-        sloganName: sloganNameRef,
-        logo: logoRef,
-        organizationName: organizationNameRef,
-        organizationType: organizationTypeRef,
-        countryOfFormation: countryOfFormationRef,
-        stateOfFormation: stateOfFormationRef,
-        position: positionRef,
-        firstName: firstNameRef,
-        lastName: lastNameRef,
-        address: addressRef,
-        city: cityRef,
-        state: stateRef,
-        zip: zipRef,
-        phone: phoneRef,
-        email: emailRef,
-        reChaptcha: reChaptchaRef,
-        preferredTime: preferredTimeRef,
-      };
-      if (errorRefs[firstErrorField] && errorRefs[firstErrorField].current) {
-        errorRefs[firstErrorField].current.scrollIntoView({
-          behavior: "smooth",
-        });
+    // error bypass
+    // const firstErrorField = validateForm();
+    // if (firstErrorField) {
+    //   setIsLoading(false);
 
-        // Wait for the scrolling to finish and then adjust by the offset
-        setTimeout(() => {
-          window.scrollBy({
-            top: -100,
-            behavior: "smooth",
-          });
-        }, 500);
-      }
-      return;
-    }
+    //   // Scroll to the first error field
+    //   const errorRefs = {
+    //     protectName: protectNameRef,
+    //     sloganName: sloganNameRef,
+    //     logo: logoRef,
+    //     organizationName: organizationNameRef,
+    //     organizationType: organizationTypeRef,
+    //     countryOfFormation: countryOfFormationRef,
+    //     stateOfFormation: stateOfFormationRef,
+    //     position: positionRef,
+    //     firstName: firstNameRef,
+    //     lastName: lastNameRef,
+    //     address: addressRef,
+    //     city: cityRef,
+    //     state: stateRef,
+    //     zip: zipRef,
+    //     phone: phoneRef,
+    //     email: emailRef,
+    //     reChaptcha: reChaptchaRef,
+    //     preferredTime: preferredTimeRef,
+    //   };
+    //   if (errorRefs[firstErrorField] && errorRefs[firstErrorField].current) {
+    //     errorRefs[firstErrorField].current.scrollIntoView({
+    //       behavior: "smooth",
+    //     });
+
+    //     // Wait for the scrolling to finish and then adjust by the offset
+    //     setTimeout(() => {
+    //       window.scrollBy({
+    //         top: -100,
+    //         behavior: "smooth",
+    //       });
+    //     }, 500);
+    //   }
+    //   return;
+    // }
+
     setIsLoading(false);
 
     // if all input field valid, then send OTP to phone number and open the modal
-    try {
-      const confirmationResult = await signInWithPhoneNumber(
-        auth,
-        `+1` + phone,
-        recaptchaVerifier
-      );
-      onOpen();
-      setResendCountdown(60);
-      setConfirmationResult(confirmationResult);
-    } catch (err) {
-      console.log("Failed to send OTP:", err);
 
-      if (err.code === "auth/invalid-phone-number") {
-        setErrors((...prev) => ({
-          ...prev,
-          phone: "Invalid phone number, Please enter a valid number.",
-        }));
-      } else if (err.code === "auth/too-many-requests") {
-        alert("Too many requests. Please try again.");
-      } else {
-        alert("Failed to send OTP. Please try again.");
-      }
-    }
+    handleFormSubmit();
+
+    // error bypass
+    // try {
+    //   const confirmationResult = await signInWithPhoneNumber(
+    //     auth,
+    //     `+1` + phone,
+    //     recaptchaVerifier
+    //   );
+    //   onOpen();
+    //   setResendCountdown(60);
+    //   setConfirmationResult(confirmationResult);
+    // } catch (err) {
+    //   console.log("Failed to send OTP:", err);
+
+    //   if (err.code === "auth/invalid-phone-number") {
+    //     setErrors((...prev) => ({
+    //       ...prev,
+    //       phone: "Invalid phone number, Please enter a valid number.",
+    //     }));
+    //   } else if (err.code === "auth/too-many-requests") {
+    //     alert("Too many requests. Please try again.");
+    //   } else {
+    //     alert("Failed to send OTP. Please try again.");
+    //   }
+    // }
   };
 
   // Verify the OTP
@@ -303,56 +310,10 @@ const StepOne = () => {
 
   // Handle form submission
   const handleFormSubmit = async (e) => {
-    const stepOne = {
-      customer_ID: Math.floor(Math.random() * 90000 + 10000),
-      wantToProtect,
-      protectName,
-      sloganName,
-      logo,
-      ownedBy,
-      formation,
-      countryOfFormation,
-      organizationName,
-      organizationType,
-      stateOfFormation,
-      position,
-      firstName,
-      lastName,
-      address,
-      city,
-      state,
-      zip,
-      phone,
-      preferredPhone,
-      email,
-      preferredTime,
-      zoho_step: 1,
-    };
+//  error bypass
 
-    // Filter out properties that are empty or undefined
-    const stepOneWithValues = Object.fromEntries(
-      Object.entries(stepOne).filter(([_, value]) => value !== "")
-    );
 
-    // store data to state
-    dispatch(saveStepOne(stepOneWithValues));
-
-    // send the data to mail and zoho
-    const endPoint = process.env.NEXT_PUBLIC_API_URL + "/save-data";
-    axios
-      .post(endPoint, stepOneWithValues)
-      .then((res) => {
-        if (res.data.success) {
-          return router.push("/trademark-register/step-2");
-        }
-      })
-      .catch((err) => {
-        console.log("Error in step one: ", err);
-        alert("Something went wrong, Check your network or Please try again.");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      router.push("/trademark-register/step-2");
   };
 
   return (
