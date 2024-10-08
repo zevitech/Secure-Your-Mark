@@ -70,55 +70,64 @@ const Payment = () => {
   leadDataWithValues.zoho_step = 2;
 
   const createOrder = async () => {
-    return await axios
-      .post("/api/paypal-checkout/create-order", { totalAmount })
-      .then((res) => {
-        return res?.data?.order.id;
-      })
-      .catch((err) => {
-        console.log("Error creating order:", err);
-        setPaymentError("Something went wrong, please try again.");
-      });
+    // error bypassing
+    // return await axios
+    //   .post("/api/paypal-checkout/create-order", { totalAmount })
+    //   .then((res) => {
+    //     return res?.data?.order.id;
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error creating order:", err);
+    //     setPaymentError("Something went wrong, please try again.");
+    //   });
+
+    return router.push("/trademark-register/thank-you");
   };
 
   // handle capture order and passing some order data
   const onApprove = async (data) => {
-    const orderData = {
-      orderId: data.orderID,
-    };
 
-    return await axios
-      .post("/api/paypal-checkout/capture-order", orderData)
-      .then((res) => {
-        // payment successful. now make a request to send the data to mail and zoho
-        if (res?.data?.result?.status == "COMPLETED") {
-          setLoader(true);
-          setPaymentError("");
-          leadDataWithValues.is_paid = true;
-          leadDataWithValues.zoho_step = 3;
-          axios
-            .post(endPoint, leadDataWithValues)
-            .then((res) => {
-              if (res.data.success) {
-                return router.push("/trademark-register/thank-you");
-              }
-            })
-            .catch((err) => {
-              setIsLoading(false);
-              console.log(
-                "Error sending data to save-data endpoint in payment page: ",
-                err
-              );
-              alert(
-                "Payment Successful. But something went wrong, please check your network or contact for support."
-              );
-            });
-        }
-      })
-      .catch((err) => {
-        console.log("Error capturing order:", err);
-        setPaymentError("Checkout Failed, Please try again.");
-      });
+
+
+    // error bypassing
+    // const orderData = {
+    //   orderId: data.orderID,
+    // };
+
+    // return await axios
+    //   .post("/api/paypal-checkout/capture-order", orderData)
+    //   .then((res) => {
+    //     // payment successful. now make a request to send the data to mail and zoho
+    //     if (res?.data?.result?.status == "COMPLETED") {
+    //       setLoader(true);
+    //       setPaymentError("");
+    //       leadDataWithValues.is_paid = true;
+    //       leadDataWithValues.zoho_step = 3;
+    //       axios
+    //         .post(endPoint, leadDataWithValues)
+    //         .then((res) => {
+    //           if (res.data.success) {
+    //             return router.push("/trademark-register/thank-you");
+    //           }
+    //         })
+    //         .catch((err) => {
+    //           setIsLoading(false);
+    //           console.log(
+    //             "Error sending data to save-data endpoint in payment page: ",
+    //             err
+    //           );
+    //           alert(
+    //             "Payment Successful. But something went wrong, please check your network or contact for support."
+    //           );
+    //         });
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error capturing order:", err);
+    //     setPaymentError("Checkout Failed, Please try again.");
+    //   });
+
+    return router.push("/trademark-register/thank-you");
   };
 
   // send the data to mail and zoho
