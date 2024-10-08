@@ -1,6 +1,9 @@
 import FormHero from "@/components/form/FormHero";
 import ThankYou from "@/components/form/steps/ThankYou";
 
+// error bypassing
+import Script from "next/script";
+
 export const metadata = {
   title: "Thank You - Register Trademark | Secure Your Mark",
   description:
