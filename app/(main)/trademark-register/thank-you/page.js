@@ -10,6 +10,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      {/* Error Bypassing */}
       <Script
         id="gtm"
         type="text/javascript"
@@ -24,6 +25,16 @@ const page = () => {
       />
 
       <main className="mb-10">
+        {/* Error Bypassing */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PXZMCZM2"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
         <FormHero />
         <ThankYou />
       </main>
