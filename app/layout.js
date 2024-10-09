@@ -6,13 +6,13 @@ import GlobalProvider from "./(main)/trademark-register/GlobalProvider";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: '--font-poppins',
+  variable: "--font-poppins",
 });
 
 const inriaSerif = Inria_Serif({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
-  variable: '--font-inria',
+  variable: "--font-inria",
 });
 
 export const metadata = {
@@ -24,6 +24,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* New Script */}
+      <Script
+        type="text/javascript"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+              (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"343156876", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+            `,
+        }}
+      />
+
       {/* Tawk.to */}
       <Script
         id="tawkTo"

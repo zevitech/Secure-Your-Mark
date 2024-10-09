@@ -16,9 +16,9 @@ const page = () => {
       <Header />
       <PageHero
         subHeading={`Here is`}
-        heading={`About Our System`}
+        heading={`About Our Trademark Services`}
         bgImg={`about-us-hero.png`}
-        details={`Secure Your Mark provides brand protection packages tailored to your uniqueness. Opt for our DIY-assisted service or enlist the assistance of attorneys to file your trademark.`}
+        details={`At Secure Your Mark, we offer comprehensive trademark protection packages designed to meet the unique needs of your brand. Choose our DIY-assisted service for a hands-on approach, allowing you to navigate the trademark registration process at your own pace. Alternatively, you can enlist the expertise of our experienced attorneys to guide you through the filing process, ensuring every detail is expertly handled. Our goal is to empower you to secure your trademark confidently and effectively, safeguarding your brand's identity in the marketplace.`}
         btnIsShuffle={true}
       />
       {/* about us section */}
@@ -89,28 +89,19 @@ const page = () => {
             image={`1st-attorney.png`}
             name={`Murten Joshef`}
             number={`+9900000`}
-            details={`Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-
-It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
+            details={`With years of experience in trademark registration and brand protection, he helps businesses secure their digital assets confidently. His expertise spans from filing trademarks to handling complex legal processes, ensuring your brand is protected in the online world. He guides companies through every step, providing comprehensive support. Whether it's securing your trademark or managing legal intricacies, he ensures your brand's safety. Trust him to protect your business's identity and digital assets effectively, allowing you to focus on growth with peace of mind.`}
           />
           <AboutAttorneyCard
             image={`2nd-attorney.png`}
-            name={`Murten Joshef`}
+            name={`Jhon Felx`}
             number={`+9900000`}
-            details={`Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-
-It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
+            details={`As a specialist in trademark law, John Felix provides expert guidance on registering business trademarks and securing brand protection. He focuses on digital trademarks and intellectual property, ensuring your brand stays protected in a dynamic market. His comprehensive services help clients safeguard their business assets and maintain a competitive edge. From filing applications to navigating legal complexities, he offers tailored support for every need. John works closely with businesses to protect their intellectual property, keeping them secure as they grow. Trust him for effective, long-term brand protection solutions.`}
           />
           <AboutAttorneyCard
             image={`3rd-attorney.png`}
-            name={`Murten Joshef`}
+            name={`Luca Tony`}
             number={`+9900000`}
-            details={`Lorem Ipsumis simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-
-It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
+            details={`Luca Tony offers extensive expertise in international trademark registration and digital brand security. He guides businesses through every step, from filing trademarks to addressing legal challenges. With a global approach, Luca helps secure trademarks across borders, ensuring your brand’s identity remains protected. His services are tailored to support companies in navigating complex legal landscapes and defending their intellectual property. Luca’s focus on digital security ensures brands stay safe in the online marketplace. Rely on him for comprehensive trademark protection and brand safeguarding worldwide.`}
           />
         </div>
       </section>

@@ -101,22 +101,18 @@ const page = () => {
       <section className="bg-[#FFFAF8] py-28 max-md:py-20 max-md:px-5">
         <div className="max-w-5xl m-auto text-center">
           <h1 className="font-bold text-4xl max-md:text-3xl leading-relaxed">
-            Why expose your Digital Assets to infringement when you can
-            <span className="text-color-primary">Trademark your Business?</span>
+            Why expose your Digital Assets to infringement when you canTrademark
+            your Business?
+            <span className="text-color-primary"> Trademark your Business?</span>
           </h1>
           <p className="text-slate-700 mt-5">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
-            vel? Eaque animi perferendis commodi enim qui fugit doloribus
-            corporis, sit in at dicta excepturi quaerat quos exercitationem
-            odit! Et ea praesentium id consectetur laboriosam dolorem earum
-            mollitia. Optio assumenda corporis quo fugiat quidem ea cumque
-            praesentium consequuntur minus, reiciendis ipsa hic vitae, cum odio
-            expedita et eos magni enim! Veritatis sequi provident dolor nobis
-            sapiente nesciunt, beatae assumenda magnam corrupti eos ipsam
-            dolorem nostrum delectus deserunt maiores consequuntur cum sunt
-            architecto natus dicta sint hic voluptatibus? Quae, deleniti
-            consequatur saepe ipsum ducimus magnam ipsa eius, consequuntur
-            eveniet asperiores molestias rerum.
+            Protect your business and its valuable digital assets by securing a
+            trademark today. Our expert team will guide you through every step
+            of the process, ensuring your brand is fully protected. Don't wait
+            for issues to arise—take action now to safeguard your intellectual
+            property. Contact us to get started and ensure long-term security
+            for your brand. Let us help you build a strong, protected foundation
+            for your business!
           </p>
         </div>
         <div className="flex-center gap-10 mt-10">

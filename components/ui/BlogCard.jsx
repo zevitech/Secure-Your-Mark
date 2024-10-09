@@ -16,10 +16,7 @@ export default function BlogCard({ heading, details, imageName }) {
         <div className="flex items-center gap-4">
           <h4 className="font-semibold text-large mb-2">{heading}</h4>
         </div>
-        <small className="text-default-500">
-          <span>“</span>
-          {details}
-        </small>
+        <small className="text-default-500">{details}</small>
       </CardHeader>
     </Card>
   );

@@ -18,7 +18,7 @@ export const navItems = [
         route: "/services/trademark-registration",
         icon: "trademark",
         details:
-          "lorem ipsum dolor sit amet lore tell tellus et netus et sapien",
+          "Secure your brand’s identity with legal protection.",
       },
       {
         id: 2,
@@ -26,7 +26,7 @@ export const navItems = [
         route: "/services/copyright-registration",
         icon: "copyright",
         details:
-          "lorem ipsum dolor sit amet lore tell tellus et netus et sapien",
+          "Safeguard your creative works from unauthorized use.",
       },
       {
         id: 3,
@@ -34,7 +34,7 @@ export const navItems = [
         route: "#",
         icon: "amazon",
         details:
-          "lorem ipsum dolor sit amet lore tell tellus et netus et sapien",
+          "Protect your brand and products on Amazon.",
       },
       {
         id: 4,
@@ -42,7 +42,7 @@ export const navItems = [
         route: "#",
         icon: "business",
         details:
-          "lorem ipsum dolor sit amet lore tell tellus et netus et sapien",
+          "Start your business with legal compliance and structure.",
       },
     ],
   },
