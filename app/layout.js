@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* Microsoft UET Tag */}
       <Script
+        id="microsoftUET"
         type="text/javascript"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
