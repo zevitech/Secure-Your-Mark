@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* New Script */}
+      {/* Microsoft UET Tag */}
       <Script
         type="text/javascript"
         strategy="afterInteractive"
