@@ -106,13 +106,13 @@ const page = () => {
             <span className="text-color-primary"> Trademark your Business?</span>
           </h1>
           <p className="text-slate-700 mt-5">
-            Protect your business and its valuable digital assets by securing a
+            {`Protect your business and its valuable digital assets by securing a
             trademark today. Our expert team will guide you through every step
-            of the process, ensuring your brand is fully protected. Don't wait
-            for issues to arise—take action now to safeguard your intellectual
+            of the process, ensuring your brand is fully protected. Do not wait
+            for issues to arise take action now to safeguard your intellectual
             property. Contact us to get started and ensure long-term security
             for your brand. Let us help you build a strong, protected foundation
-            for your business!
+            for your business!`}
           </p>
         </div>
         <div className="flex-center gap-10 mt-10">

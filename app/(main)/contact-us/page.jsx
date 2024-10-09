@@ -25,9 +25,9 @@ const page = () => {
             />
           </div>
           <p className="max-w-2xl text-color-primary text-center m-auto mt-5">
-            Get in touch with us for personalized support and expert guidance on
+            {`Get in touch with us for personalized support and expert guidance on
             securing your brand. We are here to assist you with all your
-            trademark and brand protection needs.
+            trademark and brand protection needs.`}
           </p>
         </div>
         <div className="flex-between gap-28 max-md:flex-col max-md:gap-10">
