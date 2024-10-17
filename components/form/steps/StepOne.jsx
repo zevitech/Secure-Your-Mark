@@ -130,11 +130,11 @@ const StepOne = () => {
     if (!state) tempErrors.state = "State is required";
     if (!zip) tempErrors.zip = "Zip code is required";
     if (!city) tempErrors.city = "City is required";
-    if (!phone) {
-      tempErrors.phone = "Phone number is required";
-    } else if (!validatePhoneNumber(phone)) {
-      tempErrors.phone = "Invalid phone number";
-    }
+    // if (!phone) {
+    //   tempErrors.phone = "Phone number is required";
+    // } else if (!validatePhoneNumber(phone)) {
+    //   tempErrors.phone = "Invalid phone number";
+    // }
     if (!email) {
       tempErrors.email = "Email address is required";
     } else if (!validator.validate(email)) {
@@ -224,32 +224,34 @@ const StepOne = () => {
       }
       return;
     }
-    setIsLoading(false);
+    // setIsLoading(false);
+
+    handleFormSubmit(); // will be remove once otp activated
 
     // if all input field valid, then send OTP to phone number and open the modal
-    try {
-      const confirmationResult = await signInWithPhoneNumber(
-        auth,
-        `+1` + phone,
-        recaptchaVerifier
-      );
-      onOpen();
-      setResendCountdown(60);
-      setConfirmationResult(confirmationResult);
-    } catch (err) {
-      console.log("Failed to send OTP:", err);
+    // try {
+    //   const confirmationResult = await signInWithPhoneNumber(
+    //     auth,
+    //     `+1` + phone,
+    //     recaptchaVerifier
+    //   );
+    //   onOpen();
+    //   setResendCountdown(60);
+    //   setConfirmationResult(confirmationResult);
+    // } catch (err) {
+    //   console.log("Failed to send OTP:", err);
 
-      if (err.code === "auth/invalid-phone-number") {
-        setErrors((...prev) => ({
-          ...prev,
-          phone: "Invalid phone number, Please enter a valid number.",
-        }));
-      } else if (err.code === "auth/too-many-requests") {
-        alert("Too many requests. Please try again.");
-      } else {
-        alert("Failed to send OTP. Please try again.");
-      }
-    }
+    //   if (err.code === "auth/invalid-phone-number") {
+    //     setErrors((...prev) => ({
+    //       ...prev,
+    //       phone: "Invalid phone number, Please enter a valid number.",
+    //     }));
+    //   } else if (err.code === "auth/too-many-requests") {
+    //     alert("Too many requests. Please try again.");
+    //   } else {
+    //     alert("Failed to send OTP. Please try again.");
+    //   }
+    // }
   };
 
   // Verify the OTP
@@ -258,7 +260,7 @@ const StepOne = () => {
     setIsLoading(true);
     try {
       await confirmationResult?.confirm(otp);
-      handleFormSubmit();
+      // handleFormSubmit();
     } catch (error) {
       console.log("Failed to verify OTP. Please check the OTP:", error);
       setOtpError("Failed to verify OTP. Please check the OTP.");
