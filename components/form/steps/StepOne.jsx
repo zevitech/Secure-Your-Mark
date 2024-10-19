@@ -224,7 +224,6 @@ const StepOne = () => {
       }
       return;
     }
-    setIsLoading(false);
 
     // if all input field valid, then send OTP to phone number and open the modal
     try {
@@ -236,7 +235,9 @@ const StepOne = () => {
       onOpen();
       setResendCountdown(60);
       setConfirmationResult(confirmationResult);
+      setIsLoading(false);
     } catch (err) {
+      setIsLoading(false);
       console.log("Failed to send OTP:", err);
 
       if (err.code === "auth/invalid-phone-number") {
