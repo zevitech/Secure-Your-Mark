@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Microsoft UET Tag */}
-      {/* <Script
+      <Script
         id="microsoftUET"
         type="text/javascript"
         strategy="afterInteractive"
@@ -34,10 +34,10 @@ export default function RootLayout({ children }) {
               (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"343156876", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
             `,
         }}
-      /> */}
+      />
 
       {/* Tawk.to */}
-      {/* <Script
+      <Script
         id="tawkTo"
         type="text/javascript"
         strategy="afterInteractive"
@@ -54,10 +54,10 @@ export default function RootLayout({ children }) {
             })();
           `,
         }}
-      /> */}
+      />
 
       {/* Google Tag Manager */}
-      {/* <Script
+      <Script
         id="gtm"
         type="text/javascript"
         strategy="afterInteractive"
@@ -68,10 +68,10 @@ export default function RootLayout({ children }) {
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-PXZMCZM2');`,
         }}
-      /> */}
+      />
 
       {/* MouseFlow Tracking */}
-      {/* <Script
+      <Script
         id="mouseflow"
         type="text/javascript"
         strategy="afterInteractive"
@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
             })();
            `,
         }}
-      /> */}
+      />
 
       <head>
         <meta
