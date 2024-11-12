@@ -17,32 +17,28 @@ export const navItems = [
         text: "Trademark Registration",
         route: "/services/trademark-registration",
         icon: "trademark",
-        details:
-          "Secure your brand’s identity with legal protection.",
+        details: "Secure your brand's identity with legal protection.",
       },
       {
         id: 2,
         text: "Copyright Registration ",
         route: "/services/copyright-registration",
         icon: "copyright",
-        details:
-          "Safeguard your creative works from unauthorized use.",
+        details: "Safeguard your creative works from unauthorized use.",
       },
       {
         id: 3,
         text: "Amazon Brand Registry",
-        route: "#",
+        route: "/services/amazon-registry",
         icon: "amazon",
-        details:
-          "Protect your brand and products on Amazon.",
+        details: "Protect your brand and products on Amazon.",
       },
       {
         id: 4,
         text: "Business Formation",
-        route: "#",
+        route: "/services/business-formation",
         icon: "business",
-        details:
-          "Start your business with legal compliance and structure.",
+        details: "Start your business with legal compliance and structure.",
       },
     ],
   },
@@ -82,12 +78,12 @@ export const navItemsMobile = [
   {
     id: 3,
     text: "Amazon Brand Registry",
-    route: "#",
+    route: "/services/amazon-registry",
   },
   {
     id: 4,
     text: "Business Formation",
-    route: "#",
+    route: "/services/business-formation",
   },
   {
     id: 4,

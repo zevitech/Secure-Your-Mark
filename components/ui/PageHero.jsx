@@ -42,18 +42,17 @@ const PageHero = ({
             </h1>
           )}
 
-          <p className="text-slate-400 mt-3 *:first-letter:">
-            {details}
-          </p>
+          <p className="text-slate-300 mt-3 *:first-letter:">{details}</p>
         </div>
 
         {isSearchInput && (
           <div className="w-full bg-[#F0f0f0] h-[60px] rounded-[10px] p-8 flex items-center justify-between text-start">
-            <input type="text" 
-            className="w-full h-[28px] outline-none focus:outline-none bg-transparent text-black placeholder:text-[#141C2F] placeholder:text-opacity-35"
-            placeholder="Search for trademark availability..."
+            <input
+              type="text"
+              className="w-full h-[28px] outline-none focus:outline-none bg-transparent text-black placeholder:text-[#141C2F] placeholder:text-opacity-35"
+              placeholder="Search for trademark availability..."
             />
-            <BiSearch className="text-[#F25601] w-[30px] h-[30px]"/>
+            <BiSearch className="text-[#F25601] w-[30px] h-[30px]" />
           </div>
         )}
 

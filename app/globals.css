@@ -168,3 +168,7 @@ a {
     margin-bottom: 0px !important;
   }
 }
+
+.bg-lineCard {
+  background: linear-gradient(90deg, #002652 0%, #eb5f13 100%);
+}

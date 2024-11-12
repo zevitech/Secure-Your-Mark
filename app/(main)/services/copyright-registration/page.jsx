@@ -9,17 +9,156 @@ import HowItWorks from "@/components/ui/HowItWorks";
 import TestimonialSection from "@/components/ui/TestimonialSection";
 import PackageSection from "@/components/ui/PackageSection";
 import JointBtn from "@/components/buttons/JointBtn";
+import RebonCard from "@/components/ui/RebonCard";
 
-const page = () => {
+const Page = () => {
+  const listOfItems = [
+    {
+      icon: "cr-icon-1.png",
+      details: "Legal Protection for Your Original Work",
+    },
+    {
+      icon: "cr-icon-2.png",
+      details: "Proof of Ownership and Creation",
+    },
+    {
+      icon: "cr-icon-3.png",
+      details: "Right to License and Monetize Your Work",
+    },
+    {
+      icon: "cr-icon-4.png",
+      details: "Prevent Unauthorized Usage",
+    },
+    {
+      icon: "cr-icon-5.png",
+      details: "Enhance the Value of Your Intellectual Property",
+    },
+  ];
+
   return (
     <main>
       <Header />
       <PageHero
-        subHeading={`We are here`}
+        subHeading={`Protect`}
         bgImg={`sym-hero-bg-trademark.png`}
-        heading={`Boosting Excellence with Every Service.`}
-        details={`Boosting excellence is our mission. With every service we provide, we strive to empower your success. Choose us for top-notch solutions tailored just for you.`}
+        heading={`Your Creative Work with Copyright Registration`}
+        details={`Secure your intellectual property and ensure ownership of your original work. Boosting excellence is our mission. With every service we provide, we strive to empower your success. Choose us for top-notch solutions tailored just for you.`}
+        btnIsShuffle={true}
       />
+
+      {/* why should use  */}
+      <section className="py-28 max-md:py-20 bg-[#F0F0F0]">
+        <div>
+          <div className="mb-16 max-md:mb-10 max-md:px-5">
+            <div className="flex-center gap-3">
+              <Image
+                alt="Line"
+                src={`/images/left-line-for-our-team-section.png`}
+                width={100}
+                height={10}
+                className="max-md:w-20"
+              />
+              <h4 className="text-slate-700 font-normal text-lg">Why</h4>
+              <Image
+                alt="Line"
+                src={`/images/right-line-for-our-team-section.png`}
+                width={100}
+                height={10}
+                className="max-md:w-20"
+              />
+            </div>
+            <h1 className="text-4xl max-md:text-3xl max-md:mb-3 text-slate-700 font-medium m-2 text-center">
+              Copyright Registration Matters
+            </h1>
+            <p className="text-slate-700 text-center max-w-2xl m-auto max-md:text-sm">
+              {`And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took`}
+            </p>
+          </div>
+          <div className="flex items-center justify-between max-md:flex-col max-md:gap-8">
+            <div className="relative">
+              <Image
+                src={`/images/cr-img.png`}
+                alt="Expert"
+                width={600}
+                height={600}
+                className="object-contain"
+              />
+              <div className="absolute right-5 bottom-0">
+                <PrimaryButton text={"Copyright Registration"} size={"xl"} />
+              </div>
+            </div>
+            <div className="flex-center w-[50%] max-md:w-full max-md:px-5">
+              <ul className="bg-white p-7 rounded-lg shadow-md">
+                {listOfItems.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex gap-5 text-slate-600 font-semibold text-base py-4"
+                  >
+                    <Image
+                      src={`/images/${item.icon}`}
+                      alt="icon"
+                      width={30}
+                      height={30}
+                      className="object-contain"
+                    />
+                    <p>{item.details}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* how it works */}
+      <section className="bg-white max-md:slate-50 py-28 max-md:py-20 max-md:px-5">
+        <div className="mb-16 max-md:mb-10">
+          <h1 className="text-4xl max-md:text-3xl max-md:mb-3 text-slate-700 font-medium m-2 text-center">
+            How It Works
+          </h1>
+          <p className="text-slate-700 text-center max-w-2xl m-auto max-md:text-sm">
+            {`Simple Steps to Register Your Copyright`}
+          </p>
+        </div>
+        <div className="flex-center max-md:flex-col max-md:gap-7">
+          <div className="mr-[-60px] max-md:mr-0 relative z-20 max-md:flex">
+            <Image
+              src={`/images/htw-1.png`}
+              alt="Expert"
+              width={400}
+              height={400}
+              className="object-contain max-md:w-[150px]"
+            />
+            <p className="text-lg max-md:text-base font-medium text-slate-800 max-w-[200px] text-center mt-7 ml-10">
+              Choose Your Work Type
+            </p>
+          </div>
+          <div className="mr-[-60px] max-md:mr-0 relative z-10  max-md:flex">
+            <Image
+              src={`/images/htw-2.png`}
+              alt="Expert"
+              width={400}
+              height={400}
+              className="object-contain  max-md:w-[150px]"
+            />
+            <p className="text-lg max-md:text-base font-medium text-slate-800 max-w-[200px] text-center mt-7 ml-10">
+              Fill Out the Application Form
+            </p>
+          </div>
+          <div className="">
+            <Image
+              src={`/images/htw-3.png`}
+              alt="Expert"
+              width={290}
+              height={300}
+              className="object-contain max-md:w-[80%] m-auto"
+            />
+            <p className="text-lg max-md:text-base font-medium text-slate-800 max-w-[200px] text-center mt-7 ml-10">
+              Submit the Required Documents
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* protect your property */}
       <section className="bg-[#FFFAF8] py-28 max-md:py-20 max-md:px-5">
@@ -28,7 +167,7 @@ const page = () => {
             <h1 className="text-4xl max-md:text-3xl text-slate-700 font-medium mb-2">
               Protect Your Intellectual Property Today!
             </h1>
-            <p className="text-lg mt-4 mb-8 text-slate-700">
+            <p className="text-lg max-md:text-base mt-4 mb-8 text-slate-700">
               {`Protecting your intellectual property (IP) is crucial in today's
               fast-paced and competitive market. Whether you are an
               entrepreneur, inventor, or business owner, securing your IP rights
@@ -68,6 +207,10 @@ const page = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="">
+        <RebonCard />
       </section>
 
       {/* what we do */}
@@ -122,62 +265,10 @@ const page = () => {
         </div>
       </section>
 
-      {/* 3 step process */}
-      <section className="bg-[#FFFAF8] py-28  max-md:py-20 max-md:px-5">
-        <div className="mb-20 max-md:mb-16">
-          <div className="flex-center gap-3">
-            <Image
-              alt="Line"
-              src={`/images/left-line-for-our-team-section.png`}
-              width={70}
-              height={10}
-            />
-            <h4 className="text-slate-700 font-normal text-lg">Just</h4>
-            <Image
-              alt="Line"
-              src={`/images/right-line-for-our-team-section.png`}
-              width={70}
-              height={10}
-            />
-          </div>
-          <h1 className="text-4xl text-slate-700 font-medium m-2 text-center">
-            3 Step Process
-          </h1>
-        </div>
-        <div className="flex-center max-md:flex-col gap-12">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className="relative bg-[#F0F0F0] shadow-sm rounded-md w-[300px] min-h-[250px] col-flex items-center gap-3 p-5 text-center"
-            >
-              <div className="absolute top-[-20px] right-[-20px] rounded-full flex-center w-12 h-12 text-white text-xl font-bold  bg-[#d50000]">
-                {step.id}
-              </div>
-              <Image
-                alt={step.heading}
-                src={`/images/${step.icon}`}
-                width={70}
-                height={70}
-              />
-              <h1 className="text-lg font-semibold mt-4 text-color-primary">
-                {step.heading}
-              </h1>
-              <p className="text-sm">{step.details}</p>
-            </div>
-          ))}
-        </div>
-        <div className="flex-center gap-10 mt-20 max-md:mt-10 max-md:flex-col max-md:gap-4">
-          <JointBtn />
-        </div>
-      </section>
-
       {/* packages */}
-      <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
+      <section className="bg-slate-50 py-28 max-md:py-20 max-md:px-5">
         <PackageSection />
       </section>
-
-      {/* how it works section */}
-      <HowItWorks />
 
       {/* testimonial section */}
       <TestimonialSection />
@@ -188,4 +279,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

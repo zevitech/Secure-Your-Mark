@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Microsoft UET Tag */}
-      <Script
+      {/* <Script
         id="microsoftUET"
         type="text/javascript"
         strategy="afterInteractive"
@@ -34,10 +34,10 @@ export default function RootLayout({ children }) {
               (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"343156876", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
             `,
         }}
-      />
+      /> */}
 
       {/* Tawk.to */}
-      <Script
+      {/* <Script
         id="tawkTo"
         type="text/javascript"
         strategy="afterInteractive"
@@ -54,10 +54,10 @@ export default function RootLayout({ children }) {
             })();
           `,
         }}
-      />
+      /> */}
 
       {/* Google Tag Manager */}
-      <Script
+      {/* <Script
         id="gtm"
         type="text/javascript"
         strategy="afterInteractive"
@@ -68,10 +68,10 @@ export default function RootLayout({ children }) {
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-PXZMCZM2');`,
         }}
-      />
+      /> */}
 
       {/* MouseFlow Tracking */}
-      <Script
+      {/* <Script
         id="mouseflow"
         type="text/javascript"
         strategy="afterInteractive"
@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
             })();
            `,
         }}
-      />
+      /> */}
 
       <head>
         <meta
@@ -95,22 +95,24 @@ export default function RootLayout({ children }) {
           content="where to register business name, trademark my name, trademark brand name, apply for trademark online, trade mark a company name, file my trademark, brand name trademark registration, best trademark registration service, trademark filing company, cheap trademark registration, trade mark registration, get a trademark, register my business, register my company name, trademark my logo, trademark my business name, apply for trademark, file trademark for business name, trademark registration, register my business name, register business name, trademark a name, file a trademark, get my brand trademarked, trademark and brand registration"
         />
         <meta name="author" content="Secure Your Mark" />
+        <meta name="author" content="Legal Trademark Office" />
+        <meta name="developer" content="https://softenum.com/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://secureyourmark.com/" />
       </head>
       <body className={`${poppins.className} ${inriaSerif.variable}`}>
         {/* Google Tag Manager (noscript) */}
-        <noscript>
+        {/* <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PXZMCZM2"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
-        </noscript>
+        </noscript> */}
         {/* End Google Tag Manager (noscript) */}
 
-        {/* <GlobalProvider> */}
         {children}
-        {/* </GlobalProvider> */}
       </body>
     </html>
   );
