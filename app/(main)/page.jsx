@@ -15,19 +15,40 @@ import TestimonialSection from "@/components/ui/TestimonialSection";
 import ResentBlogsSection from "@/components/ui/ResentBlogsSection";
 import ContactForm from "@/components/ui/ContactForm";
 import PackageSection from "@/components/ui/PackageSection";
+import SearchModal from "@/components/ui/SearchModal";
 
 const page = () => {
   return (
     <main>
       <Header />
-      <PageHero
-        subHeading={`We are here`}
-        bgImg={`sym-hero-bg-trademark.png`}
-        isHome={true}
-        details={`Start the process now and discover how to trademark a name, file a trademark, or apply for your business trademark with ease.`}
-        isSearchInput
-        btnIsShuffle={true}
-      />
+      <section
+        style={{ backgroundImage: `url('/images/sym-hero-bg-trademark.png')` }}
+        className={`py-10 max-md:py-14 w-full h-[90vh] max-md:h-auto max-md:min-h-[70vh] max-md:pb-24 max-md:px-5 flex-center text-white bg-no-repeat bg-center bg-cover`}
+      >
+        <div className="flex flex-col max-w-4xl max-md:w-full m-auto gap-10 max-md:gap-5">
+          <div>
+            <div className="flex items-center gap-2 text-slate-300">
+              <p className="font-inriaSerif">{`We are here`}</p>
+              <Image
+                src={"/images/title-line.png"}
+                alt="Secure Your Mark"
+                width={150}
+                height={10}
+                className={`object-contain`}
+              />
+            </div>
+            <h1 className="text-center font-bold text-5xl max-md:text-4xl max-w-[850px] font-inriaSerif">
+              Protect Your Brand - Register{" "}
+              <span className="text-color-primary">Trademark</span> Today!
+            </h1>
+
+            <p className="text-slate-300 mt-3 *:first-letter:">{`Start the process now and discover how to trademark a name, file a trademark, or apply for your business trademark with ease.`}</p>
+          </div>
+
+          <SearchModal />
+        </div>
+      </section>
+
       <section className="max-w-5xl max-md:w-[90%] m-auto pt-9 pb-7 max-md:pb-0 bg-slate-200 rounded-md mt-[-30px] px-10 max-md:px-3 shadow-lg max-md:flex-center">
         <BrandCarousel />
       </section>
