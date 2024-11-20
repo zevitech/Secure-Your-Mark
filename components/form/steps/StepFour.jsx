@@ -9,13 +9,21 @@ import { IoTimerOutline } from "react-icons/io5";
 import { useSelector, useDispatch } from "react-redux";
 import { saveStepFour } from "@/features/formSlice";
 import AcknowledgeText from "../AcknowledgeText";
+import { FaCreditCard } from "react-icons/fa";
+import SmallLabel from "../SmallLabel";
+import Image from "next/image";
 
 const StepFour = () => {
   const router = useRouter();
+  const govermentFeesAmount = 350;
+
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [acknowledge, setAcknowledge] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
+  const [isGovermentFeesProcessing, setIsGovermentFeesProcessing] =
+    useState(false);
+
   const stepThreeData = useSelector((state) => state.form.stepThree);
 
   // page authorization | redirect if previous step has no data
@@ -35,6 +43,8 @@ const StepFour = () => {
     }
 
     const data = {
+      isGovermentFeesProcessing,
+      govermentFeesAmount: isGovermentFeesProcessing ? govermentFeesAmount : 0,
       i_acknowledge: acknowledge,
     };
     dispatch(saveStepFour(data)); // store data to state
@@ -53,6 +63,34 @@ const StepFour = () => {
         <h1 className="text-slate-700 font-semibold text-2xl mb-5">
           IMPORTANT NOTICE: PLEASE READ AND ACKNOWLEDGE
         </h1>
+
+        <div className="relative mt-4">
+          <FieldContainer>
+            <div className="flex items-center gap-4 mt-6">
+              <FaCreditCard className="text-2xl max-md:text-5xl text-[#03579ce0]" />
+
+              <p className="text-[#03579ce0] font-bold text-md uppercase">
+                Federal Filing Fee (1 - Class) $350
+              </p>
+            </div>
+
+            <AcknowledgeText
+              text={`The package includes the government fee of $350 for the registration of one mandatory class for your trademark. Our expert paralegals will review your case to determine the optimal number of classes needed to fully protect your business name, logo, or slogan. Additional government fees may apply for each additional class identified during the paralegal team's review. You will be informed about additional classes before proceeding. Our goal is to ensure comprehensive protection for your intellectual property, and our team will guide you through the process with transparency and expertise.`}
+            />
+            <Checkbox
+              isSelected={isGovermentFeesProcessing}
+              onValueChange={setIsGovermentFeesProcessing}
+              size="md"
+              className="mt-2"
+            >
+              Federal fee:{" "}
+              <span className="text-primary-theme font-semibold">
+                ${govermentFeesAmount}.00 USD
+              </span>
+            </Checkbox>
+          </FieldContainer>
+        </div>
+
         <div className="relative">
           <FieldContainer>
             <div className="mb-2 flex flex-col gap-4">
