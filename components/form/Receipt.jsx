@@ -8,11 +8,8 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 const Receipt = () => {
   const nestedLeadData = useSelector((state) => state.form);
-  const { isGovermentFeesProcessing, govermentFeesAmount } =
-    nestedLeadData.stepFour;
   const basePrice = nestedLeadData.stepThree.price;
-  const totalPrice =
-    basePrice + (isGovermentFeesProcessing ? govermentFeesAmount : 0);
+  const totalPrice = basePrice;
 
   const today = new Date().toLocaleDateString(undefined, {
     year: "numeric",
@@ -87,18 +84,6 @@ const Receipt = () => {
             <p className="w-full bg-slate-400 h-[1px]"></p>
             <p className="text-slate-700 font-normal">$0.00</p>
           </div>
-
-          {nestedLeadData.stepFour.isGovermentFeesProcessing === true && (
-            <div className="flex flex-1 items-center gap-3 py-1">
-              <p className="text-slate-500 font-thin flex-none text-sm">
-                Goverment Fees
-              </p>
-              <p className="w-full bg-slate-400 h-[1px]"></p>
-              <p className="text-slate-700 font-normal">
-                ${nestedLeadData.stepFour.govermentFeesAmount}
-              </p>
-            </div>
-          )}
 
           <div className="flex flex-1 text-slate-700 items-center gap-3 border-t-2 border-dotted border-slate-600 py-1 mt-4 pt-3">
             <b className="flex-none text-sm">Sub Total</b>
