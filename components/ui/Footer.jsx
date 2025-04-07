@@ -19,45 +19,6 @@ const Footer = () => {
             through a simple steps trademark registration process.
           </p>
           <div className="flex items-center gap-5 mt-7 max-md:mt-3 max-md:flex-col max-md:items-start">
-            <div className="flex gap-4">
-              <Link href="" target="_blank">
-                <Image
-                  src={`/images/twritter-logo.png`}
-                  alt="Secure Your Mark"
-                  width={30}
-                  height={30}
-                  className="object-contain rounded-md"
-                />
-              </Link>
-              <Link href="" target="_blank">
-                <Image
-                  src={`/images/whatsapp-logo.png`}
-                  alt="Secure Your Mark"
-                  width={30}
-                  height={30}
-                  className="object-contain rounded-md"
-                />
-              </Link>
-              <Link href="" target="_blank">
-                <Image
-                  src={`/images/facebook-logo.png`}
-                  alt="Secure Your Mark"
-                  width={30}
-                  height={30}
-                  className="object-contain rounded-md"
-                />
-              </Link>
-              <Link href="" target="_blank">
-                <Image
-                  src={`/images/linkedin-logo.png`}
-                  alt="Secure Your Mark"
-                  width={30}
-                  height={30}
-                  className="object-contain rounded-md"
-                />
-              </Link>
-            </div>
-
             <div className="flex flex-col gap-4">
               <Link href="tel:+14082562372" className="flex-center">
                 <Image
@@ -71,7 +32,7 @@ const Footer = () => {
                   <h4 className="text-color-primary text-base font-semibold">
                     +1 (408) 256-2372
                   </h4>
-                  <p className="text-xs text-slate-700">Secure Your Mark</p>
+                  <p className="text-xs text-white">Secure Your Mark</p>
                 </div>
               </Link>
 
@@ -87,7 +48,7 @@ const Footer = () => {
                   <h4 className="text-color-primary text-base font-semibold">
                     +1 (408) 256-3271
                   </h4>
-                  <p className="text-xs text-slate-700">Secure Your Mark</p>
+                  <p className="text-xs text-white">Secure Your Mark</p>
                 </div>
               </Link>
             </div>

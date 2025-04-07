@@ -47,45 +47,6 @@ const page = () => {
               attorneys help you file your trademark.
             </p>
             <div className="flex items-start justify-start flex-col gap-4 mt-9 max-md:mt-3">
-              <div className="flex gap-5">
-                <Link href="" target="_blank">
-                  <Image
-                    src={`/images/twritter-logo.png`}
-                    alt="Secure Your Mark"
-                    width={35}
-                    height={35}
-                    className="object-contain rounded-md"
-                  />
-                </Link>
-                <Link href="" target="_blank">
-                  <Image
-                    src={`/images/whatsapp-logo.png`}
-                    alt="Secure Your Mark"
-                    width={35}
-                    height={35}
-                    className="object-contain rounded-md"
-                  />
-                </Link>
-                <Link href="" target="_blank">
-                  <Image
-                    src={`/images/facebook-logo.png`}
-                    alt="Secure Your Mark"
-                    width={35}
-                    height={35}
-                    className="object-contain rounded-md"
-                  />
-                </Link>
-                <Link href="" target="_blank">
-                  <Image
-                    src={`/images/linkedin-logo.png`}
-                    alt="Secure Your Mark"
-                    width={35}
-                    height={35}
-                    className="object-contain rounded-md"
-                  />
-                </Link>
-              </div>
-
               <div className="flex flex-col gap-4">
                 <Link href="tel:+14082562372" className="flex-center">
                   <Image
@@ -99,7 +60,7 @@ const page = () => {
                     <h4 className="text-color-primary text-base font-semibold">
                       +1 (408) 256-2372
                     </h4>
-                    <p className="text-xs text-slate-700">Secure Your Mark</p>
+                    <p className="text-xs text-white">Secure Your Mark</p>
                   </div>
                 </Link>
 
@@ -115,7 +76,7 @@ const page = () => {
                     <h4 className="text-color-primary text-base font-semibold">
                       +1 (408) 256-3271
                     </h4>
-                    <p className="text-xs text-slate-700">Secure Your Mark</p>
+                    <p className="text-xs text-white">Secure Your Mark</p>
                   </div>
                 </Link>
               </div>
