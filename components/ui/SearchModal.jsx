@@ -116,9 +116,9 @@ const SearchModal = () => {
                 <Divider />
                 {isSearchComplete ? (
                   <p className="mb-4">
-                    &quot;<span className="font-semibold">{searchInput}</span>
-                    &quot; is available! Hurry and trademark it now before
-                    it&apos;s too late.
+                    Congratulations! The trademark name &quot;
+                    <span className="font-semibold">{searchInput}</span>
+                    &quot; is available for registration.
                   </p>
                 ) : (
                   <p className="mb-4 text-black/50">

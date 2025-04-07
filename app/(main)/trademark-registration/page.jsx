@@ -35,21 +35,40 @@ const page = () => {
             Protection for Your Business.
           </p>
         </div>
-        <Link href="tel:+13104244909" className="flex-center">
-          <Image
-            src={`/images/phone-icon.png`}
-            alt="Bell"
-            width={24}
-            height={24}
-            className="object-contain"
-          />
-          <div className="flex flex-col items-center">
-            <h4 className="text-white text-base font-semibold">
-              +1 (310) 424-4909
-            </h4>
-            <p className="text-xs">Secure Your Mark</p>
-          </div>
-        </Link>
+
+        <div className="flex flex-col gap-4">
+          <Link href="tel:+14082562372" className="flex-center">
+            <Image
+              src={`/images/orange-phone-icon.png`}
+              alt="Bell"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+            <div className="flex flex-col items-center">
+              <h4 className="text-color-primary text-base font-semibold">
+                +1 (408) 256-2372
+              </h4>
+              <p className="text-xs text-slate-700">Secure Your Mark</p>
+            </div>
+          </Link>
+
+          <Link href="tel:+14082563271" className="flex-center">
+            <Image
+              src={`/images/orange-phone-icon.png`}
+              alt="Bell"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+            <div className="flex flex-col items-center">
+              <h4 className="text-color-primary text-base font-semibold">
+                +1 (408) 256-3271
+              </h4>
+              <p className="text-xs text-slate-700">Secure Your Mark</p>
+            </div>
+          </Link>
+        </div>
       </header>
 
       {/* Hero Section */}

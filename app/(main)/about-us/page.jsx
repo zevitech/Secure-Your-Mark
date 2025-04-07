@@ -88,19 +88,22 @@ const page = () => {
           <AboutAttorneyCard
             image={`1st-attorney.png`}
             name={`Murten Joshef`}
-            number={`+9900000`}
+            number={`+9930400`}
+            number02={`+9945006`}
             details={`With years of experience in trademark registration and brand protection, he helps businesses secure their digital assets confidently. His expertise spans from filing trademarks to handling complex legal processes, ensuring your brand is protected in the online world. He guides companies through every step, providing comprehensive support. Whether it's securing your trademark or managing legal intricacies, he ensures your brand's safety. Trust him to protect your business's identity and digital assets effectively, allowing you to focus on growth with peace of mind.`}
           />
           <AboutAttorneyCard
             image={`2nd-attorney.png`}
             name={`Jhon Felx`}
-            number={`+9900000`}
+            number={`+9902100`}
+            number02={`+9900506`}
             details={`As a specialist in trademark law, John Felix provides expert guidance on registering business trademarks and securing brand protection. He focuses on digital trademarks and intellectual property, ensuring your brand stays protected in a dynamic market. His comprehensive services help clients safeguard their business assets and maintain a competitive edge. From filing applications to navigating legal complexities, he offers tailored support for every need. John works closely with businesses to protect their intellectual property, keeping them secure as they grow. Trust him for effective, long-term brand protection solutions.`}
           />
           <AboutAttorneyCard
             image={`3rd-attorney.png`}
             name={`Luca Tony`}
             number={`+9900000`}
+            number02={`+9900006`}
             details={`Luca Tony offers extensive expertise in international trademark registration and digital brand security. He guides businesses through every step, from filing trademarks to addressing legal challenges. With a global approach, Luca helps secure trademarks across borders, ensuring your brand’s identity remains protected. His services are tailored to support companies in navigating complex legal landscapes and defending their intellectual property. Luca’s focus on digital security ensures brands stay safe in the online marketplace. Rely on him for comprehensive trademark protection and brand safeguarding worldwide.`}
           />
         </div>
