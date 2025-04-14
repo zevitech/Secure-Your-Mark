@@ -44,12 +44,6 @@ const Payment = () => {
       { title: "Office Action Response", amount: 0 },
     ];
 
-    if (stepFourData.govermentFeesAmount !== 0) {
-      baseDetails.push({
-        title: "Goverment Fee",
-        amount: stepFourData.govermentFeesAmount,
-      });
-    }
     return baseDetails;
   }, [nestedLeadData]);
 
