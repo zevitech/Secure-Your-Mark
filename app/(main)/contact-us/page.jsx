@@ -7,6 +7,7 @@ import HowItWorks from "@/components/ui/HowItWorks";
 import TestimonialSection from "@/components/ui/TestimonialSection";
 import ResentBlogsSection from "@/components/ui/ResentBlogsSection";
 import ContactForm from "@/components/ui/ContactForm";
+import { IoPin } from "react-icons/io5";
 
 const page = () => {
   return (
@@ -77,6 +78,16 @@ const page = () => {
                       +1 (408) 256-3271
                     </h4>
                     <p className="text-xs text-white">Secure Your Mark</p>
+                  </div>
+                </Link>
+
+                <Link href="tel:+14082563271" className="flex-center">
+                  <IoPin size={24} className="text-[#F25601]" />
+                  <div className="flex flex-col items-center">
+                    <h4 className="text-color-primary text-base font-semibold">
+                      1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125
+                    </h4>
+                    <p className="text-xs text-white">Physical Address</p>
                   </div>
                 </Link>
               </div>
