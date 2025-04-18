@@ -51,6 +51,16 @@ const Footer = () => {
                   <p className="text-xs text-white">Secure Your Mark</p>
                 </div>
               </Link>
+
+              <div className="flex-center">
+                <IoPin size={24} className="text-[#F25601]" />
+                <div className="flex flex-col items-center">
+                  <h4 className="text-color-primary text-base font-semibold">
+                    1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125
+                  </h4>
+                  <p className="text-xs text-white">Physical Address</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
