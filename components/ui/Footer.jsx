@@ -55,7 +55,7 @@ const Footer = () => {
 
               <div className="flex items-center">
                 <IoPin size={30} className="text-[#F25601]" />
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col">
                   <h4 className="text-color-primary text-base font-semibold">
                     1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125
                   </h4>
