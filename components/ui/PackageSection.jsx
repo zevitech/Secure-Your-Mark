@@ -72,7 +72,7 @@ const PackageSection = () => {
           <div className="absolute top-[190px] right-[12px] max-md:relative max-md:top-0 max-md:right-0">
             <PackageCard
               packageName={`Standard`}
-              price={`135`}
+              price={`235`}
               isPopular={true}
               items={standardPackage}
               mb={"60"}
@@ -83,7 +83,7 @@ const PackageSection = () => {
       <div className="mt-5">
         <PackageCard
           packageName={`Premium`}
-          price={`235`}
+          price={`1,199`}
           isPopular={false}
           items={premiumPackage}
           mb={"50"}
