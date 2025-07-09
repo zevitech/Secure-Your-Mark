@@ -36,8 +36,8 @@ const page = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
-          <Link href="tel:+14082562372" className="flex-center bg-white">
+        <div className="flex flex-col gap-4 justify-center">
+          <Link href="tel:+14082562372" className="flex-center bg-white p-4 rounded-2xl">
             <Image
               src={`/images/orange-phone-icon.png`}
               alt="Bell"
@@ -45,12 +45,10 @@ const page = () => {
               height={24}
               className="object-contain"
             />
-            <div className="flex flex-col items-center">
-              <h4 className="text-color-primary text-base font-semibold">
-                +1 (408) 256-2372
-              </h4>
-              <p className="text-xs text-white">Secure Your Mark</p>
-            </div>
+
+            <h4 className="text-color-primary text-base font-semibold">
+              +1 (408) 256-2372
+            </h4>
           </Link>
         </div>
       </header>
