@@ -38,7 +38,7 @@ const page = () => {
 
         <Link
           href="tel:+14082562372"
-          className="flex-center bg-white py-2 gap-2 px-4 rounded-2xl"
+          className="flex-center bg-white py-2 gap-2 px-4 rounded-2xl my-4"
         >
           <Image
             src={`/images/orange-phone-icon.png`}
