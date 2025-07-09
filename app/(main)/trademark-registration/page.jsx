@@ -41,12 +41,12 @@ const page = () => {
             <Image
               src={`/images/orange-phone-icon.png`}
               alt="Bell"
-              width={24}
-              height={24}
+              width={16}
+              height={16}
               className="object-contain"
             />
 
-            <h4 className="text-color-primary text-base font-semibold">
+            <h4 className="text-color-primary text-sm font-semibold">
               +1 (408) 256-2372
             </h4>
           </Link>
