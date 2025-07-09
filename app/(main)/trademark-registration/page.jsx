@@ -36,21 +36,22 @@ const page = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4 justify-center">
-          <Link href="tel:+14082562372" className="flex-center bg-white p-4 rounded-2xl">
-            <Image
-              src={`/images/orange-phone-icon.png`}
-              alt="Bell"
-              width={16}
-              height={16}
-              className="object-contain"
-            />
+        <Link
+          href="tel:+14082562372"
+          className="flex-center bg-white py-2 gap-2 px-4 rounded-2xl"
+        >
+          <Image
+            src={`/images/orange-phone-icon.png`}
+            alt="Bell"
+            width={16}
+            height={16}
+            className="object-contain"
+          />
 
-            <h4 className="text-color-primary text-sm font-semibold">
-              +1 (408) 256-2372
-            </h4>
-          </Link>
-        </div>
+          <h4 className="text-color-primary text-sm font-semibold">
+            +1 (408) 256-2372
+          </h4>
+        </Link>
       </header>
 
       {/* Hero Section */}
