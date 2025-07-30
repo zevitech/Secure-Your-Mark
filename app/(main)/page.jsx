@@ -100,7 +100,7 @@ const page = () => {
       </section> */}
 
       {/* meet our attorney */}
-      <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
+      {/* <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
         <div className="mb-16 max-md:mb-10">
           <div className="flex-center gap-3">
             <Image
@@ -143,7 +143,7 @@ const page = () => {
             details={`Luca Tony brings a wealth of experience in international trademark registration and digital brand security. From filing a trademark to handling legal challenges, Luca Tony supports businesses in securing their trademarks across borders and safeguarding their brand identity.`}
           />
         </div>
-      </section>
+      </section> */}
 
       {/* protect your property */}
       <section className="bg-[#FFFAF8] py-28  max-md:py-20 max-md:px-5">
@@ -245,7 +245,7 @@ const page = () => {
       </section>
 
       {/* 3 step process */}
-      <section className="bg-[#FFFAF8] py-28  max-md:py-20 max-md:px-5">
+      {/* <section className="bg-[#FFFAF8] py-28  max-md:py-20 max-md:px-5">
         <div className="mb-20 max-md:mb-16">
           <div className="flex-center gap-3">
             <Image
@@ -308,7 +308,7 @@ const page = () => {
             {`> Contact Us`}
           </Button>
         </div>
-      </section>
+      </section> */}
 
       {/* how it works section */}
       <HowItWorks />
