@@ -40,7 +40,7 @@ const Page = () => {
       <Header />
       <PageHero
         subHeading={`Protect`}
-        bgImg={`sym-hero-bg-trademark.png`}
+        bgImg={`sym-hero-bg-trademark.jpg`}
         heading={`Your Creative Work with Copyright Registration`}
         details={`Secure your intellectual property and ensure ownership of your original work. Boosting excellence is our mission. With every service we provide, we strive to empower your success. Choose us for top-notch solutions tailored just for you.`}
         btnIsShuffle={true}
