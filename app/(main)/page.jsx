@@ -354,7 +354,7 @@ const page = () => {
 
       {/* contact form */}
       <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
-        <div className="flex items-center max-md:flex-col gap-28 max-md:gap-10">
+        <div className="flex items-center max-md:flex-col gap-28 max-md:gap-10 max-w-[450px]">
           <div className="max-w-md md:ml-20">
             <h1 className="text-4xl text-slate-70 font-medium mb-3">
               Contact Us For Any Enquiry
