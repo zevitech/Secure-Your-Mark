@@ -39,12 +39,12 @@ const page = () => {
                 className={`object-contain`}
               />
             </div>
-            <h1 className="text-center font-bold text-5xl max-md:text-4xl max-w-[850px] font-inriaSerif">
+            <h1 className="text-center font-bold lg:text-7xl md:text-5xl text-4xl lg:max-w-[900px] md:max-w-[850px] font-inriaSerif">
               Protect Your Brand - Register{" "}
               <span className="text-color-primary">Trademark</span> Today!
             </h1>
 
-            <p className="text-slate-300 mt-3 *:first-letter:">{`Start the process now and discover how to trademark a name, file a trademark, or apply for your business trademark with ease.`}</p>
+            <p className="!text-center text-lg font-medium text-slate-300 mt-3 *:first-letter:">{`Start the process now and discover how to trademark a name, file a trademark, or apply for your business trademark with ease.`}</p>
           </div>
 
           <SearchModal />
