@@ -354,12 +354,12 @@ const page = () => {
 
       {/* contact form */}
       <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
-        <div className="flex items-center max-md:flex-col gap-28 max-md:gap-10 max-w-[450px]">
+        <div className="flex items-center max-md:flex-col gap-28 max-md:gap-10 max-w-[80%] w-full mx-auto">
           <div className="max-w-md md:ml-20">
             <h1 className="text-4xl text-slate-70 font-medium mb-3">
               Contact Us For Any Enquiry
             </h1>
-            <p className="text-slate-700 ">
+            <p className="text-slate-700">
               Secure Your Mark offers brand protection in packages that are as
               unique as you are. Choose between our DIY-assisted service or have
               attorneys help you file your trademark.
@@ -378,7 +378,7 @@ const page = () => {
                     <h4 className="text-color-primary text-base font-semibold">
                       +1 (408) 256-2372
                     </h4>
-                    <p className="text-xs text-white">Secure Your Mark</p>
+                    <p className="text-xs !text-black">Secure Your Mark</p>
                   </div>
                 </Link>
 
@@ -394,7 +394,7 @@ const page = () => {
                     <h4 className="text-color-primary text-base font-semibold">
                       +1 (408) 256-3271
                     </h4>
-                    <p className="text-xs text-white">Secure Your Mark</p>
+                    <p className="text-xs !text-black">Secure Your Mark</p>
                   </div>
                 </Link>
               </div>
