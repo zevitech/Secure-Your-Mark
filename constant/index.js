@@ -188,27 +188,23 @@ export const howItWorks = [
   {
     icon: "hiw-1.png",
     heading: "Free lawyer's check",
-    subHeading: "RESULT IN 24 HOURS",
     details:
       "Before you apply for a trademark, our legal team will conduct a thorough review to ensure your trademark meets the distinctiveness criteria required for USPTO trademark registration. Receive results and recommendations within 24 hours to begin the process of filing a trademark for your business.",
   },
   {
     icon: "hiw-2.png",
     heading: "Application drafting",
-    subHeading: "3-5 DAYS PROCESS",
     details:
       "After you sign up and provide your details, we will prepare and draft your trademark registration application. Once approved, we will file the trademark on your behalf and provide legal representation, helping you easily register your business trademark.",
   },
   {
     icon: "hiw-3.png",
     heading: "IPO examination",
-    subHeading: "3-12 MONTHS PERIOD",
     details:
       "Your application will be assessed by the appropriate Intellectual Property Office (IPO), where it will be published and reviewed for potential oppositions. This is a key step in the trademark and brand registration process, leading to successful online trademark registration.",
   },
   {
     icon: "hiw-4.png",
-    heading: "10 year validity",
     subHeading: "REGISTRATION COMPLETED",
     details:
       "Once your trademark registration is approved, it will be entered into the official register and granted a 10-year validity. Secure your brand with brand name trademark registration and ensure long-term protection.",

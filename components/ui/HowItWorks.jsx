@@ -41,9 +41,6 @@ const HowItWorks = () => {
               <h1 className="font-bold text-lg text-slate-900">
                 {item.heading}
               </h1>
-              <p className="text-slate-700 text-xs font-bold">
-                {item.subHeading}
-              </p>
             </div>
             <p className="text-slate-700 mb-2 text-sm">{item.details}</p>
             <Button variant="flat" color="warning">
