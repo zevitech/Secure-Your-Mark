@@ -27,7 +27,7 @@ const page = () => {
         style={{ backgroundImage: `url('/images/sym-hero-bg-trademark.jpg')` }}
         className={`py-10 max-md:py-14 w-full h-[90vh] max-md:h-auto max-md:min-h-[70vh] max-md:pb-24 max-md:px-5 flex-center text-white bg-no-repeat bg-center bg-cover`}
       >
-        <div className="flex flex-col max-w-4xl max-md:w-full m-auto gap-10 max-md:gap-5">
+        <div className="flex flex-col max-w-5xl max-md:w-full m-auto gap-10 max-md:gap-5">
           <div>
             <div className="flex items-center gap-2 text-slate-300">
               <p className="font-inriaSerif">{`We are here`}</p>
@@ -39,8 +39,8 @@ const page = () => {
                 className={`object-contain`}
               />
             </div>
-            <h1 className="text-center font-bold lg:text-7xl md:text-5xl text-4xl lg:max-w-[900px] md:max-w-[850px] font-inriaSerif">
-              Protect Your Brand - Register{" "}
+            <h1 className="text-center font-bold lg:text-7xl md:text-5xl text-4xl font-inriaSerif">
+              Protect Your Brand Register{" "}
               <span className="text-color-primary">Trademark</span> Today!
             </h1>
 
@@ -365,39 +365,21 @@ const page = () => {
               attorneys help you file your trademark.
             </p>
             <div className="flex items-start justify-start flex-col gap-4 mt-9 max-md:mt-3">
-              <div className="flex flex-col gap-4">
-                <Link href="tel:+14082562372" className="flex-center">
-                  <Image
-                    src={`/images/orange-phone-icon.png`}
-                    alt="Bell"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                  <div className="flex flex-col items-center">
-                    <h4 className="text-color-primary text-base font-semibold">
-                      +1 (408) 256-2372
-                    </h4>
-                    <p className="text-xs !text-black">Secure Your Mark</p>
-                  </div>
-                </Link>
-
-                <Link href="tel:+14082563271" className="flex-center">
-                  <Image
-                    src={`/images/orange-phone-icon.png`}
-                    alt="Bell"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                  <div className="flex flex-col items-center">
-                    <h4 className="text-color-primary text-base font-semibold">
-                      +1 (408) 256-3271
-                    </h4>
-                    <p className="text-xs !text-black">Secure Your Mark</p>
-                  </div>
-                </Link>
-              </div>
+              <Link href="tel:+14082563271" className="flex-center">
+                <Image
+                  src={`/images/orange-phone-icon.png`}
+                  alt="Bell"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+                <div className="flex flex-col items-center">
+                  <h4 className="text-color-primary text-base font-semibold">
+                    +1 (408) 256-3271
+                  </h4>
+                  <p className="text-xs !text-black">Secure Your Mark</p>
+                </div>
+              </Link>
             </div>
           </div>
           <ContactForm />

@@ -48,39 +48,21 @@ const page = () => {
               attorneys help you file your trademark.
             </p>
             <div className="flex items-start justify-start flex-col gap-4 mt-9 max-md:mt-3">
-              <div className="flex flex-col gap-4">
-                <Link href="tel:+14082562372" className="flex-center">
-                  <Image
-                    src={`/images/orange-phone-icon.png`}
-                    alt="Bell"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                  <div className="flex flex-col items-center">
-                    <h4 className="text-color-primary text-base font-semibold">
-                      +1 (408) 256-2372
-                    </h4>
-                    <p className="text-xs text-white">Secure Your Mark</p>
-                  </div>
-                </Link>
-
-                <Link href="tel:+14082563271" className="flex-center">
-                  <Image
-                    src={`/images/orange-phone-icon.png`}
-                    alt="Bell"
-                    width={24}
-                    height={24}
-                    className="object-contain"
-                  />
-                  <div className="flex flex-col items-center">
-                    <h4 className="text-color-primary text-base font-semibold">
-                      +1 (408) 256-3271
-                    </h4>
-                    <p className="text-xs text-white">Secure Your Mark</p>
-                  </div>
-                </Link>
-              </div>
+              <Link href="tel:+14082563271" className="flex-center">
+                <Image
+                  src={`/images/orange-phone-icon.png`}
+                  alt="Bell"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+                <div className="flex flex-col items-center">
+                  <h4 className="text-color-primary text-base font-semibold">
+                    +1 (408) 256-3271
+                  </h4>
+                  <p className="text-xs !text-black">Secure Your Mark</p>
+                </div>
+              </Link>
             </div>
           </div>
           <div className="pr-40 max-md:px-5 max-md:w-full">
