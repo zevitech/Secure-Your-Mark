@@ -17,7 +17,7 @@ const Footer = () => {
           />
           <p className="text-slate-200 text-sm">
             Secure Your Mark helps brands protect their identity and image
-            through a simple steps trademark registration process.
+            through a simple steps trademark registration process. (office timing: 09:00 AM to 05:00 AM)
           </p>
           <div className="flex items-center gap-5 mt-7 max-md:mt-3 max-md:flex-col max-md:items-start">
             <div className="flex flex-col gap-4">
@@ -57,7 +57,7 @@ const Footer = () => {
                 <IoPin size={30} className="text-[#F25601]" />
                 <div className="flex flex-col">
                   <h4 className="text-color-primary text-base font-semibold">
-                    1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125
+                    17 N Almanden Blvd suite 120, San Jose, CA 95113
                   </h4>
                   <p className="text-xs text-white">Physical Address</p>
                 </div>

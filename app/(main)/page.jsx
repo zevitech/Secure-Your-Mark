@@ -369,7 +369,7 @@ const page = () => {
       </section>
 
       {/* resent blogs */}
-      <ResentBlogsSection />
+      {/* <ResentBlogsSection /> */}
 
       {/* footer section */}
       <Footer />
