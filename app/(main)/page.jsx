@@ -15,7 +15,7 @@ import TestimonialSection from "@/components/ui/TestimonialSection";
 import ResentBlogsSection from "@/components/ui/ResentBlogsSection";
 import ContactForm from "@/components/ui/ContactForm";
 import PackageSection from "@/components/ui/PackageSection";
-import SearchModal from "@/components/ui/SearchModal";
+import SearchModal from "@/components/ui/cta-buttons";
 import FAQBox from "@/components/ui/FAQBox";
 import HeadLine from "@/components/ui/HeadLine";
 

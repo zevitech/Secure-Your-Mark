@@ -60,6 +60,10 @@ a {
   @apply bg-[#F25601];
 }
 
+.bg-color-secondary {
+  @apply bg-[#0b206e8f];
+}
+
 .col-flex {
   @apply flex flex-col;
 }
