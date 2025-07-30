@@ -49,12 +49,17 @@ const page = () => {
         </div>
       </section>
 
-      <section className="max-w-5xl max-md:w-[90%] m-auto pt-9 pb-7 max-md:pb-0 bg-slate-200 rounded-md mt-[-30px] px-10 max-md:px-3 shadow-lg max-md:flex-center">
-        <BrandCarousel />
+      {/* packages */}
+      <section className="bg-[#F0F0F0] py-28  max-md:py-20 max-md:px-5">
+        <PackageSection />
       </section>
 
+      {/* <section className="max-w-5xl max-md:w-[90%] m-auto pt-9 pb-7 max-md:pb-0 bg-slate-200 rounded-md mt-[-30px] px-10 max-md:px-3 shadow-lg max-md:flex-center">
+        <BrandCarousel />
+      </section> */}
+
       {/* about us section */}
-      <section className="py-28 max-md:py-20 max-md:px-5">
+      {/* <section className="py-28 max-md:py-20 max-md:px-5">
         <div className="flex-center gap-10 max-md:flex-col">
           <div className="max-w-[600px]">
             <div className="mb-5 ">
@@ -92,7 +97,7 @@ const page = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* meet our attorney */}
       <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
@@ -303,11 +308,6 @@ const page = () => {
             {`> Contact Us`}
           </Button>
         </div>
-      </section>
-
-      {/* packages */}
-      <section className="bg-[#F0F0F0] py-28  max-md:py-20 max-md:px-5">
-        <PackageSection />
       </section>
 
       {/* how it works section */}
