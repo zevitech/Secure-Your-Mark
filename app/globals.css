@@ -61,7 +61,7 @@ a {
 }
 
 .bg-color-secondary {
-  @apply bg-[#0b206e8f];
+  @apply bg-[#0b206e];
 }
 
 .col-flex {
