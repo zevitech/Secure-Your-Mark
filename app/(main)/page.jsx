@@ -16,6 +16,8 @@ import ResentBlogsSection from "@/components/ui/ResentBlogsSection";
 import ContactForm from "@/components/ui/ContactForm";
 import PackageSection from "@/components/ui/PackageSection";
 import SearchModal from "@/components/ui/SearchModal";
+import FAQBox from "@/components/ui/FAQBox";
+import HeadLine from "@/components/ui/HeadLine";
 
 const page = () => {
   return (
@@ -316,8 +318,42 @@ const page = () => {
       {/* testimonial section */}
       <TestimonialSection />
 
+      {/* FAQ */}
+      <section className=" bg-[#fff]">
+        <div className="section-center">
+          <div className="flex justify-center max-md:flex-col max-md:w-[90%] max-md:m-auto gap-20 max-md:gap-10 py-28 max-md:py-20">
+            <div className="max-w-[450px] col-flex gap-5 items-center">
+              <div className="text-center ">
+                <HeadLine text={`FAQs`} />
+                <p className="mt-3 text-lg text-color-primary max-md:text-center">
+                  Protect Your Brand with Confidence - Expert Trademark Services
+                  Made Simple.
+                </p>
+              </div>
+              <Image
+                src={`/images/faq-icon.png`}
+                alt="trustpilot-excellent"
+                width={180}
+                height={180}
+                className="object-contain mt-4"
+              />
+            </div>
+            <div className="max-w-[600px] col-flex gap-9">
+              <h1 className="text-sm font-medium">
+                {`Our FAQ section provides clear and concise answers to common
+                questions about trademark registration and protection. Whether
+                you're curious about the application process, fees, or how to
+                handle trademark disputes, we've got you covered. Explore our
+                FAQs to get quick and reliable information.`}
+              </h1>
+              <FAQBox />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* contact form */}
-      <section className="bg-[#FFFAF8] py-28 max-md:py-20 max-md:px-5">
+      <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
         <div className="flex items-center max-md:flex-col gap-28 max-md:gap-10">
           <div className="max-w-md md:ml-20">
             <h1 className="text-4xl text-slate-70 font-medium mb-3">

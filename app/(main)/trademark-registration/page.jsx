@@ -296,7 +296,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> 
 
       {/* Contact Us */}
       <section className="bg-color-primary-gradient relative">

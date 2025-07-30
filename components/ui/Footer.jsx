@@ -17,7 +17,8 @@ const Footer = () => {
           />
           <p className="text-slate-200 text-sm">
             Secure Your Mark helps brands protect their identity and image
-            through a simple steps trademark registration process. (office timing: 09:00 AM to 05:00 AM)
+            through a simple steps trademark registration process. (office
+            timing: 09:00 AM to 05:00 AM)
           </p>
           <div className="flex items-center gap-5 mt-7 max-md:mt-3 max-md:flex-col max-md:items-start">
             <div className="flex flex-col gap-4">
@@ -53,7 +54,13 @@ const Footer = () => {
                 </div>
               </Link>
 
-              <div className="flex items-center">
+              <Link
+                href={
+                  "https://www.google.com/maps/place/17+N+Almaden+Blvd+%23120,+San+Jose,+CA+95113,+USA/@37.33424,-121.8957865,17z/data=!3m1!4b1!4m5!3m4!1s0x808fcca3d64aaa17:0x2aeb31fcb0a8c3c!8m2!3d37.33424!4d-121.8957865?entry=ttu&g_ep=EgoyMDI1MDcyOC4wIKXMDSoASAFQAw%3D%3D"
+                }
+                target="_blank"
+                className="flex items-center"
+              >
                 <IoPin size={30} className="text-[#F25601]" />
                 <div className="flex flex-col">
                   <h4 className="text-color-primary text-base font-semibold">
@@ -61,7 +68,7 @@ const Footer = () => {
                   </h4>
                   <p className="text-xs text-white">Physical Address</p>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
