@@ -18,6 +18,9 @@ import PackageSection from "@/components/ui/PackageSection";
 import SearchModal from "@/components/ui/cta-buttons";
 import FAQBox from "@/components/ui/FAQBox";
 import HeadLine from "@/components/ui/HeadLine";
+import { BiShield } from "react-icons/bi";
+import { FaPerson } from "react-icons/fa6";
+import { LuGitGraph } from "react-icons/lu";
 
 const page = () => {
   return (
@@ -148,51 +151,98 @@ const page = () => {
       </section> */}
 
       {/* protect your property */}
-      <section className="bg-[#FFFAF8] py-28  max-md:py-20 max-md:px-5">
-        <div className="flex-center max-md:flex-col gap-20">
-          <div className="max-w-xl ">
-            <h1 className="text-4xl max-md:text-3xl text-slate-700 font-medium mb-2">
-              Protect Your Business with Secure Your Mark!
-            </h1>
-            <p className="text-lg mt-4 mb-8 text-slate-700">
-              {`Securing your intellectual property (IP) is essential in today's competitive business environment. As an entrepreneur, inventor, or business owner, trademarking your brand ensures that your hard work and creativity are safeguarded. With Secure Your Mark, we offer the fastest trademark registration services to protect your business and your brand. Don’t leave your business vulnerable—file a trademark for your business today with our easy online trademark registration process!`}
-            </p>
-            <div className="max-md:flex-center max-md:w-full">
-              <PrimaryButton text={"Learn More >"} size={"xl"} animate={true} />
+     <section className="w-full relative bg-gradient-to-br from-[#FFFAF8] to-[#FDF4F0] py-32 max-md:py-24 max-md:px-5 overflow-hidden">
+  {/* Enhanced Background Elements */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundImage: `
+        radial-gradient(circle at 15% 30%, #ccb755 0%, transparent 60%), 
+        radial-gradient(circle at 85% 70%, #f2560130 0%, transparent 50%)
+      `,
+      opacity: 0.2,
+      mixBlendMode: "multiply",
+    }}
+  />
+  
+  <div className="relative z-10 max-w-7xl mx-auto">
+    <div className="flex items-center justify-between max-lg:flex-col max-lg:text-center gap-16">
+      {/* Left Content */}
+      <div className="flex-1 max-w-2xl space-y-6">
+        <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium text-slate-700 shadow-sm bg-white">
+          🛡️ Trademark Protection Services
+        </div>
+        
+        <h1 className="text-5xl max-md:text-4xl max-sm:text-3xl text-slate-800 font-bold leading-tight">
+          Protect Your Business with Secure Your Mark!
+        </h1>
+        
+        <p className="text-xl max-md:text-lg text-slate-600 leading-relaxed">
+          Securing your intellectual property (IP) is essential in today&apos;s competitive business environment. As an entrepreneur, inventor, or business owner, trademarking your brand ensures that your hard work and creativity are safeguarded.
+        </p>
+        
+        <div className="flex items-center gap-4 max-md:flex-col max-md:w-full">
+          <PrimaryButton text={"Get Started Today →"} size={"xl"} animate={true} />
+          <button className="px-6 py-3 text-slate-700 font-medium hover:text-slate-900 transition-colors">
+            Learn More ↗
+          </button>
+        </div>
+        
+     
+      </div>
+      
+      <div className="flex-1 max-w-lg space-y-8">
+        <div className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+              <BiShield />
             </div>
-          </div>
-          <div className="max-w-lg col-flex gap-9">
-            <div className="col-flex gap-3">
-              <h2 className="text-color-primary bg-[#f256015c] py-2 px-6 rounded-full w-fit">
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-slate-800 group-hover:text-yellow-700 transition-colors">
                 Legal Safeguard
-              </h2>
-              <p className=" text-slate-700">
-                Protect your brand, inventions, and creative works from
-                unauthorized use with trademark and brand registration through
-                Secure Your Mark.
-              </p>
-            </div>
-            <div className="col-flex gap-3 direction-rtl">
-              <h2 className="text-color-primary bg-[#f256015c] py-2 px-6 rounded-full w-fit">
-                Boost Business Value
-              </h2>
-              <p className=" text-slate-700">
-                {`Strengthen your brand's identity and enhance your business's market position by registering a trademark for your business name.`}
-              </p>
-            </div>
-            <div className="col-flex gap-3">
-              <h2 className="text-color-primary bg-[#f256015c] py-2 px-6 rounded-full w-fit">
-                Expert Support
-              </h2>
-              <p className=" text-slate-700">
-                Receive professional guidance from Secure Your Mark throughout
-                the trademark registration process, ensuring your rights are
-                fully protected.
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Protect your brand, inventions, and creative works from unauthorized use with comprehensive trademark registration.
               </p>
             </div>
           </div>
         </div>
-      </section>
+        
+        <div className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+              <LuGitGraph />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-slate-800 group-hover:text-orange-700 transition-colors">
+                Boost Business Value
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Strengthen your brand&apos;s identity and enhance your business&apos;s market position with professional trademark registration.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="group p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+              <FaPerson />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-slate-800 group-hover:text-blue-700 transition-colors">
+                Expert Support
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Receive professional guidance throughout the entire trademark registration process, ensuring your rights are fully protected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* what we do */}
       <section className="bg-[#F0F0F0] py-28  max-md:py-20 max-md:px-5">
