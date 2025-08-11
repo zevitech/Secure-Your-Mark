@@ -9,6 +9,7 @@ import LpAccordion from "@/components/ui/LpAccordion";
 import { canBeTrademarked, canNotBeTrademarked } from "@/constant";
 import FAQBox from "@/components/ui/FAQBox";
 import TestimonialCarousel from "@/components/ui/TestimonialCarousel";
+import PackageSection from "@/components/ui/PackageSection";
 
 const page = () => {
   return (
@@ -165,7 +166,9 @@ const page = () => {
             {`Contact Us`}
           </Button>
         </div>
+      <PackageSection />
       </section>
+
 
       {/* Protection Mode Section */}
       <section className="flex-center max-md:flex-col gap-20 max-md:gap-5 bg-[#F0F0F0] py-16">

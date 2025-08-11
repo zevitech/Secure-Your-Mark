@@ -64,14 +64,14 @@ const PackageSection = () => {
         </div>
         <div className="flex ml-4 max-md:ml-0 gap-5 max-md:gap-12 mt-5 max-md:flex-col">
           <PackageCard
-            packageName={`Basic`}
+            packageName={`Startup`}
             price={`35`}
             isPopular={false}
             items={basicPackage}
           />
           <div className="absolute top-[190px] right-[12px] max-md:relative max-md:top-0 max-md:right-0">
             <PackageCard
-              packageName={`Standard`}
+              packageName={`Best seller`}
               price={`135`}
               isPopular={true}
               items={standardPackage}
@@ -82,7 +82,7 @@ const PackageSection = () => {
       </div>
       <div className="mt-5">
         <PackageCard
-          packageName={`Premium`}
+          packageName={`Cooperative`}
           price={`235`}
           isPopular={false}
           items={premiumPackage}
