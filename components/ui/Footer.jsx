@@ -48,7 +48,7 @@ const Footer = () => {
                 <IoPin size={30} className="text-[#F25601]" />
                 <div className="flex flex-col">
                   <h4 className="text-color-primary text-base font-semibold">
-                    17 N Almanden Blvd suite 120, San Jose, CA 95113
+                    1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125, United States
                   </h4>
                   <p className="text-xs text-white">Physical Address</p>
                 </div>
