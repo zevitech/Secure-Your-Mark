@@ -60,14 +60,14 @@ const StepThree = () => {
             handleNext={handleNext}
           />
           <Package
-            price={235}
+            price={135}
             packageName={`Standard`}
             complementaryTreat={`+ USPTO Fee $350/Class*`}
             rows={_135_USD}
             handleNext={handleNext}
           />
           <Package
-            price={1199}
+            price={235}
             badge={true}
             packageName={`Premium`}
             complementaryTreat={`+ USPTO Fee $350/Class*`}

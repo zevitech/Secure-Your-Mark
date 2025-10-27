@@ -1,4 +1,4 @@
-export const _35_USD = [
+  export const _35_USD = [
   {
     title: "Trademark Monitoring",
     description:
