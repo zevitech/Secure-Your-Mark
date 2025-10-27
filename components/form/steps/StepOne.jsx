@@ -94,8 +94,34 @@ const StepOne = () => {
 
   // validate the phone number
   const validatePhoneNumber = (phoneNumber) => {
-    const phoneNumberObject = parsePhoneNumberFromString(phoneNumber, "US");
-    return phoneNumberObject ? phoneNumberObject.isValid() : false;
+    if (!phoneNumber || phoneNumber.trim() === "") return false;
+
+    // Remove all non-digit characters for basic validation
+    const digitsOnly = phoneNumber.replace(/\D/g, "");
+
+    // Check if it's a valid US phone number (10 digits) or international (7-15 digits)
+    if (
+      digitsOnly.length === 10 ||
+      (digitsOnly.length >= 7 && digitsOnly.length <= 15)
+    ) {
+      try {
+        // Try to parse as US number first
+        let phoneNumberObject = parsePhoneNumberFromString(phoneNumber, "US");
+        if (phoneNumberObject && phoneNumberObject.isValid()) {
+          return true;
+        }
+
+        // If US parsing fails, try without country code
+        phoneNumberObject = parsePhoneNumberFromString(phoneNumber);
+        return phoneNumberObject ? phoneNumberObject.isValid() : false;
+      } catch (error) {
+        // Fallback to basic digit count validation
+        const isValid = digitsOnly.length === 10;
+        return isValid;
+      }
+    }
+
+    return false;
   };
 
   // validate the form input
@@ -140,6 +166,7 @@ const StepOne = () => {
     } else if (!validator.validate(email)) {
       tempErrors.email = "Invalid email address";
     }
+    // Validate reCAPTCHA
     if (!reChaptcha) {
       tempErrors.reChaptcha = "Please verify that you are not a robot";
     }
@@ -148,7 +175,8 @@ const StepOne = () => {
     }
 
     setErrors(tempErrors);
-    return Object.keys(tempErrors)[0]; // Return the first error key
+
+    return Object.keys(tempErrors)[0];
   };
 
   // ReCAPTCHA verification
@@ -304,6 +332,51 @@ const StepOne = () => {
 
   // Handle form submission
   const handleFormSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    setIsLoading(true);
+
+    // Validate form before submission
+    const firstErrorField = validateForm();
+    if (firstErrorField) {
+      setIsLoading(false);
+
+      // Scroll to the first error field
+      const errorRefs = {
+        protectName: protectNameRef,
+        sloganName: sloganNameRef,
+        logo: logoRef,
+        organizationName: organizationNameRef,
+        organizationType: organizationTypeRef,
+        countryOfFormation: countryOfFormationRef,
+        stateOfFormation: stateOfFormationRef,
+        position: positionRef,
+        firstName: firstNameRef,
+        lastName: lastNameRef,
+        address: addressRef,
+        city: cityRef,
+        state: stateRef,
+        zip: zipRef,
+        phone: phoneRef,
+        email: emailRef,
+        reChaptcha: reChaptchaRef,
+        preferredTime: preferredTimeRef,
+      };
+      if (errorRefs[firstErrorField] && errorRefs[firstErrorField].current) {
+        errorRefs[firstErrorField].current.scrollIntoView({
+          behavior: "smooth",
+        });
+
+        // Wait for the scrolling to finish and then adjust by the offset
+        setTimeout(() => {
+          window.scrollBy({
+            top: -100,
+            behavior: "smooth",
+          });
+        }, 500);
+      }
+      return;
+    }
+
     const stepOne = {
       customer_ID: Math.floor(Math.random() * 90000 + 10000),
       wantToProtect,
@@ -340,20 +413,26 @@ const StepOne = () => {
 
     // send the data to mail and zoho
     const endPoint = process.env.NEXT_PUBLIC_API_URL + "/save-data";
-    axios
-      .post(endPoint, stepOneWithValues)
-      .then((res) => {
-        if (res.data.success) {
-          return router.push("/trademark-register/step-2");
-        }
-      })
-      .catch((err) => {
-        console.log("Error in step one: ", err);
-        alert("Something went wrong, Check your network or Please try again.");
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+
+    try {
+      const response = await axios.post(endPoint, stepOneWithValues);
+
+      if (response.data.success) {
+        router.push("/trademark-register/step-2");
+      } else {
+        alert("Form submission failed. Please try again.");
+      }
+    } catch (err) {
+      if (err.response?.status === 404) {
+        alert("API endpoint not found. Please contact support.");
+      } else if (err.response?.status >= 500) {
+        alert("Server error. Please try again later.");
+      } else {
+        alert("Something went wrong. Check your network or please try again.");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

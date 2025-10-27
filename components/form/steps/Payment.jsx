@@ -70,7 +70,6 @@ const Payment = () => {
         return res?.data?.order.id;
       })
       .catch((err) => {
-        console.log("Error creating order:", err);
         setPaymentError("Something went wrong, please try again.");
       });
   };
@@ -99,10 +98,6 @@ const Payment = () => {
             })
             .catch((err) => {
               setIsLoading(false);
-              console.log(
-                "Error sending data to save-data endpoint in payment page: ",
-                err
-              );
               alert(
                 "Payment Successful. But something went wrong, please check your network or contact for support."
               );
@@ -110,7 +105,6 @@ const Payment = () => {
         }
       })
       .catch((err) => {
-        console.log("Error capturing order:", err);
         setPaymentError("Checkout Failed, Please try again.");
       });
   };
@@ -125,7 +119,6 @@ const Payment = () => {
         await axios.post(endPoint, leadDataWithValues);
         setIsDataSent(true); // Mark as sent
       } catch (err) {
-        console.log("Error sending mail in payment page: ", err);
         alert("Something went wrong, Check your network or Please try again.");
       }
     };
@@ -134,9 +127,11 @@ const Payment = () => {
   }, [isDataSent]);
 
   // page authorization | redirect if previous step has no data
-  if (Object.keys(stepFourData).length === 0) {
-    return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
-  }
+  useEffect(() => {
+    if (Object.keys(stepFourData).length === 0) {
+      router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
+    }
+  }, [stepFourData, router]);
 
   return (
     <div className="px-16 mt-16 mb-14 max-sm:px-2 max-md:mt-12 max-md:mb-8">

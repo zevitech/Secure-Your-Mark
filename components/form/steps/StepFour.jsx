@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FieldContainer from "../FieldContainer";
 import { Button, Checkbox } from "@nextui-org/react";
 import ButtonContainer from "../ButtonContainer";
@@ -25,9 +25,11 @@ const StepFour = () => {
   const stepThreeData = useSelector((state) => state.form.stepThree);
 
   // page authorization | redirect if previous step has no data
-  if (Object.keys(stepThreeData).length === 0) {
-    return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
-  }
+  useEffect(() => {
+    if (Object.keys(stepThreeData).length === 0) {
+      router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
+    }
+  }, [stepThreeData, router]);
 
   // handle form submission
   const handleFormSubmit = async (e) => {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@nextui-org/react";
 import { MdOutlineCall } from "react-icons/md";
 import { FaDownload } from "react-icons/fa6";
@@ -22,9 +22,11 @@ const ThankYou = () => {
   const stepThreeData = useSelector((state) => state.form.stepThree);
 
   // page authorization | redirect if previous step has no data
-  if (Object.keys(stepThreeData).length === 0) {
-    return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
-  }
+  useEffect(() => {
+    if (Object.keys(stepThreeData).length === 0) {
+      router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
+    }
+  }, [stepThreeData, router]);
 
   // make image and the download the receipt as image
   const handleDownload = async () => {

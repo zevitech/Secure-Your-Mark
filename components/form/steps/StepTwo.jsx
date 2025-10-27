@@ -19,9 +19,11 @@ const StepTwo = () => {
   const [classification, setClassification] = useState("");
 
   // page authorization | redirect if previous step has no data
-  if (Object.keys(stepOneData).length === 0) {
-    return router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
-  }
+  useEffect(() => {
+    if (Object.keys(stepOneData).length === 0) {
+      router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
+    }
+  }, [stepOneData, router]);
 
   // handle form submission
   const handleFormSubmit = async (e) => {
@@ -62,7 +64,7 @@ const StepTwo = () => {
           <Button
             color="secondary"
             variant="shadow"
-            onClick={() => router.back()}
+            onPress={() => router.back()}
           >
             Previous
           </Button>
