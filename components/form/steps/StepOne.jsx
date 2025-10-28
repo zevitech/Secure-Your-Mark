@@ -124,6 +124,33 @@ const StepOne = () => {
     return false;
   };
 
+  // Clear specific errors when form fields are updated
+  useEffect(() => {
+    setErrors(prevErrors => {
+      const newErrors = { ...prevErrors };
+      
+      // Clear errors for fields that now have values
+      if (protectName && newErrors.protectName) delete newErrors.protectName;
+      if (sloganName && newErrors.sloganName) delete newErrors.sloganName;
+      if (logo && newErrors.logo) delete newErrors.logo;
+      if (organizationName && newErrors.organizationName) delete newErrors.organizationName;
+      if (organizationType && newErrors.organizationType) delete newErrors.organizationType;
+      if (countryOfFormation && newErrors.countryOfFormation) delete newErrors.countryOfFormation;
+      if (stateOfFormation && newErrors.stateOfFormation) delete newErrors.stateOfFormation;
+      if (position && newErrors.position) delete newErrors.position;
+      if (firstName && newErrors.firstName) delete newErrors.firstName;
+      if (lastName && newErrors.lastName) delete newErrors.lastName;
+      if (address && newErrors.address) delete newErrors.address;
+      if (state && newErrors.state) delete newErrors.state;
+      if (zip && newErrors.zip) delete newErrors.zip;
+      if (city && newErrors.city) delete newErrors.city;
+      if (phone && newErrors.phone) delete newErrors.phone;
+      if (email && newErrors.email) delete newErrors.email;
+      
+      return newErrors;
+    });
+  }, [protectName, sloganName, logo, organizationName, organizationType, countryOfFormation, stateOfFormation, position, firstName, lastName, address, state, zip, city, phone, email]);
+
   // validate the form input
   const validateForm = () => {
     let tempErrors = {};
@@ -170,9 +197,9 @@ const StepOne = () => {
     if (!reChaptcha) {
       tempErrors.reChaptcha = "Please verify that you are not a robot";
     }
-    if (!preferredTime) {
-      tempErrors.preferredTime = "Please enter your preferred time to call you";
-    }
+    // if (!preferredTime) {
+    //   tempErrors.preferredTime = "Please enter your preferred time to call you";
+    // }
 
     setErrors(tempErrors);
 
@@ -661,7 +688,10 @@ const StepOne = () => {
               <Select
                 variant="underlined"
                 label="Organization Type"
-                onChange={(e) => setOrganizationType(e.target.value)}
+                selectedKeys={organizationType ? [organizationType] : []}
+                onSelectionChange={(keys) => setOrganizationType(Array.from(keys)[0] || "")}
+                isInvalid={!!errors.organizationType}
+                errorMessage={errors.organizationType}
                 ref={organizationTypeRef}
               >
                 {organizationTypes.map((type) => (
@@ -688,9 +718,10 @@ const StepOne = () => {
                 <Select
                   variant="underlined"
                   label="State Of Formation"
+                  selectedKeys={stateOfFormation ? [stateOfFormation] : []}
                   isInvalid={!!errors.stateOfFormation}
                   errorMessage={errors.stateOfFormation}
-                  onChange={(e) => setStateOfFormation(e.target.value)}
+                  onSelectionChange={(keys) => setStateOfFormation(Array.from(keys)[0] || "")}
                   ref={stateOfFormationRef}
                 >
                   {stateList.map((state) => (
@@ -769,7 +800,8 @@ const StepOne = () => {
             <Select
               variant="underlined"
               label="State/Province/Region"
-              onChange={(e) => setState(e.target.value)}
+              selectedKeys={state ? [state] : []}
+              onSelectionChange={(keys) => setState(Array.from(keys)[0] || "")}
               isInvalid={!!errors.state}
               errorMessage={errors.state}
               ref={stateRef}
