@@ -46,7 +46,7 @@ const StepTwo = () => {
         <FieldContainer>
           <BoldLabel text={`Trademark Classification`} />
           <SmallLabel
-            text={`Start describing the goods and services related to your mark. ${process.env.NEXT_PUBLIC_APP_NAME} compare the description you provide and provides descriptions from the USPTO ID Manual for your considerations.`}
+            text={`Start describing the goods and services related to your mark. ${process.env.NEXT_PUBLIC_APP_NAME} compare the description you provide and provides descriptions from the Federal Office ID Manual for your considerations.`}
           />
           <Textarea
             variant="bordered"

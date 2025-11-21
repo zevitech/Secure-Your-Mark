@@ -90,7 +90,7 @@ const StepFour = () => {
                   3. FEDERAL FEE REQUIREMENT
                 </h4>
                 <AcknowledgeText
-                  text={`In addition to the service fee, a $350 federal fee per classification is required by the USPTO (United
+                  text={`In addition to the service fee, a $350 federal fee per classification is required by the Federal Office (United
               States Patent and Trademark Office) for filing your trademark. This fee will be collected after we
               have reviewed your application and prepared your trademark filing.`}
                 />
@@ -107,7 +107,7 @@ const StepFour = () => {
                 </p>
                 <p className="text-sm opacity-80 font-bold ml-4 text-slate-800">
                   {`- Acknowledge there is an additional federal fee of $350 per classification that must be paid to the
-                  USPTO after the application is prepared`}
+                  Federal Office after the application is prepared`}
                 </p>
               </div>
             </div>

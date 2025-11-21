@@ -80,7 +80,7 @@ const page = () => {
                     for your Business Name, Slogan, or Logo Starting at
                   </h1>
                   <h1 className="text-color-primary text-[40px] max-md:text-[30px]">
-                    $35+ USPTO Filing Fee
+                    $35+ Federal Office Filing Fee
                   </h1>
                 </div>
               </div>
@@ -166,9 +166,8 @@ const page = () => {
             {`Contact Us`}
           </Button>
         </div>
-      <PackageSection />
+        <PackageSection />
       </section>
-
 
       {/* Protection Mode Section */}
       <section className="flex-center max-md:flex-col gap-20 max-md:gap-5 bg-[#F0F0F0] py-16">

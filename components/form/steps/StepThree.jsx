@@ -55,14 +55,14 @@ const StepThree = () => {
           <Package
             price={35}
             packageName={`Basic`}
-            complementaryTreat={`+ USPTO Fee $350/Class*`}
+            complementaryTreat={`+ Federal Office Fee $350/Class*`}
             rows={_35_USD}
             handleNext={handleNext}
           />
           <Package
             price={135}
             packageName={`Standard`}
-            complementaryTreat={`+ USPTO Fee $350/Class*`}
+            complementaryTreat={`+ Federal Office Fee $350/Class*`}
             rows={_135_USD}
             handleNext={handleNext}
           />
@@ -70,7 +70,7 @@ const StepThree = () => {
             price={235}
             badge={true}
             packageName={`Premium`}
-            complementaryTreat={`+ USPTO Fee $350/Class*`}
+            complementaryTreat={`+ Federal Office Fee $350/Class*`}
             rows={_235_USD}
             handleNext={handleNext}
           />

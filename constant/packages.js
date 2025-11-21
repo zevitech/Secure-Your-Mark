@@ -87,7 +87,7 @@ export const _235_USD = [
 ];
 
 export const basicPackage = [
-  "Comprehensive Search: Basic search of the USPTO database for existing trademarks to minimize risk of rejection.",
+  "Comprehensive Search: Basic search of the Federal Office database for existing trademarks to minimize risk of rejection.",
   "7-Day Processing: Completion of trademark application within 7 business days after approval.",
   "Filing Prepared by Specialists: Your application will be prepared and reviewed by our trademark specialists.",
   "100% Satisfaction Guarantee: Ensuring your mark is processed efficiently.",
@@ -97,15 +97,15 @@ export const standardPackage = [
   "3-Day Processing: Completion of trademark application within 3 business days after approval.",
   "Reviewed By Paralegal: A licensed paralegal will review your trademark application to ensure legal compliance.",
   "100% Satisfaction Guarantee: Ensuring your mark is processed efficiently.",
-  "Office Action Support: In case of any USPTO office actions, receive a Cease and Desist letter template to address infringing parties.",
+  "Office Action Support: In case of any Federal Office actions, receive a Cease and Desist letter template to address infringing parties.",
 ];
 export const premiumPackage = [
   "Comprehensive Trademark Search: Includes federal and state trademark searches for similar names, logos, or slogans, ensuring thorough coverage.",
   "24 - 48 Hours Processing: Completion of trademark application within 14 business days after approval.",
-  "Full Paralegal Support: A team of U.S. licensed paralegals will guide you through the application process, from preparation to response to any USPTO inquiries.",
+  "Full Paralegal Support: A team of U.S. licensed paralegals will guide you through the application process, from preparation to response to any Federal Office inquiries.",
   "documents, and important deadlines will be available to you 24/7 through your online account.",
   "100% Satisfaction Guarantee: Ensuring your mark is processed efficiently.",
-  "Office Action Support: In case of any USPTO office actions, receive a Cease and Desist letter template to address infringing parties.",
+  "Office Action Support: In case of any Federal Office actions, receive a Cease and Desist letter template to address infringing parties.",
   "6 Months of Trademark Monitoring: Monitoring service extended for six months to detect any infringing marks after registration",
   "Additional Filings Management: Covers additional filings required during the approval process (60% of applications typically require this)",
 ];

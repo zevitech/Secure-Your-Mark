@@ -39,7 +39,7 @@ const page = () => {
                 {`At Secure Your Mark, we specialize in guiding businesses through the trademark registration process with ease and expertise. Whether you're looking to trademark a name, register a business trademark, or file a trademark for your brand, we simplify the complex legal steps involved.`}
               </p>
               <p>
-                {`Our team is dedicated to ensuring a seamless process, from helping you apply for a trademark with the USPTO to securing your brand for Amazon Brand Registry. We offer personalized support for every step, ensuring your business is legally protected.`}
+                {`Our team is dedicated to ensuring a seamless process, from helping you apply for a trademark with the Federal Office to securing your brand for Amazon Brand Registry. We offer personalized support for every step, ensuring your business is legally protected.`}
               </p>
               <p>{`Whether you need assistance to register your company name, file a trademark declaration, or simply understand how the process works, Secure Your Mark is your trusted partner in safeguarding your brand's future.`}</p>
             </div>

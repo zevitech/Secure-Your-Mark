@@ -18,7 +18,7 @@ const PackageCard = ({ packageName, price, isPopular, items, mb }) => {
         <div className="bg-[#242F49] py-7 px-5 my-4 flex justify-center items-end">
           <h1 className="text-slate-100 text-5xl font-bold">${price}</h1>
           <span className="text-slate-200 text-sm">
-            + $350/ PER CLASS USPTO FEE
+            + $350/ PER CLASS Federal Office FEE
           </span>
         </div>
         <div className="px-5">

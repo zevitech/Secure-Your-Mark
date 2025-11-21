@@ -17,6 +17,6 @@ export const steps = [
     title: "Application Filling",
     image: "process-3.png",
     details:
-      "Your application will be filed with the U.S. Patent and Trademark Office (USPTO)",
+      "Your application will be filed with the U.S. Patent and Trademark Office (Federal Office)",
   },
 ];

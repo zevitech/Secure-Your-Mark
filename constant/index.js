@@ -80,7 +80,7 @@ export const serviceList = [
   { id: 3, text: "70% of Self Filers make a mistake, avoid that today" },
   {
     id: 4,
-    text: "Full Preparation and Filing of your Official Trademark with USPTO",
+    text: "Full Preparation and Filing of your Official Trademark with Federal Office",
   },
 ];
 
@@ -101,7 +101,7 @@ export const tpme = [
     id: 3,
     title: "Submit Your Application",
     details:
-      "Once we confirm the uniqueness of your mark, our experts will professionally prepare and apply to the USPTO, initiating the official registration process to trademark and brand registration.",
+      "Once we confirm the uniqueness of your mark, our experts will professionally prepare and apply to the Federal Office, initiating the official registration process to trademark and brand registration.",
   },
 ];
 
@@ -150,7 +150,7 @@ export const trademarkStudy = [
     icon: "invoice-icon.png",
     heading: "Trademark Registration",
     details:
-      "Secure your brand by filing a trademark declaration with USPTO trademark registration. We provide the fastest trademark registration services to prevent fraudulent companies from copying your business's intellectual property. Start with trademark and brand registration today!",
+      "Secure your brand by filing a trademark declaration with Federal Office trademark registration. We provide the fastest trademark registration services to prevent fraudulent companies from copying your business's intellectual property. Start with trademark and brand registration today!",
   },
   {
     icon: "copyright-icon.png",
@@ -180,7 +180,7 @@ export const steps = [
     icon: "user-list-icon.png",
     heading: "Project Delivery",
     details:
-      "Once you've selected your package, our team takes over. From filing with the USPTO for trademark registration to ensuring a smooth online trademark registration, we handle everything to deliver the best possible results for your project.",
+      "Once you've selected your package, our team takes over. From filing with the Federal Office for trademark registration to ensuring a smooth online trademark registration, we handle everything to deliver the best possible results for your project.",
   },
 ];
 
@@ -189,7 +189,7 @@ export const howItWorks = [
     icon: "hiw-1.png",
     heading: "Free lawyer's check",
     details:
-      "Before you apply for a trademark, our legal team will conduct a thorough review to ensure your trademark meets the distinctiveness criteria required for USPTO trademark registration. Receive results and recommendations within 24 hours to begin the process of filing a trademark for your business.",
+      "Before you apply for a trademark, our legal team will conduct a thorough review to ensure your trademark meets the distinctiveness criteria required for Federal Office trademark registration. Receive results and recommendations within 24 hours to begin the process of filing a trademark for your business.",
   },
   {
     icon: "hiw-2.png",
