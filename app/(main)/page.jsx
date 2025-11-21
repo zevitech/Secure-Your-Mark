@@ -151,19 +151,9 @@ const page = () => {
       </section> */}
 
       {/* protect your property */}
-      <section className="w-full relative bg-gradient-to-br from-[#FFFAF8] to-[#FDF4F0] py-32 max-md:py-24 max-md:px-5 overflow-hidden">
+      <section className="w-full relative py-32 max-md:py-24 max-md:px-5 overflow-hidden">
         {/* Enhanced Background Elements */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `
-        radial-gradient(circle at 15% 30%, #ccb755 0%, transparent 60%), 
-        radial-gradient(circle at 85% 70%, #f2560130 0%, transparent 50%)
-      `,
-            opacity: 0.2,
-            mixBlendMode: "multiply",
-          }}
-        />
+       
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex items-center justify-between max-lg:flex-col max-lg:text-center gap-16">

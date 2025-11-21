@@ -20,7 +20,7 @@ const UpgradeBtn = () => {
       isLoading={isLoading}
       className="bg-color-primary text-white font-bold text-xl p-4 m-auto rounded-lg text-center hover:opacity-80 cursor-pointer w-full py-8"
     >
-      Upgrade Now
+      Get Started
     </Button>
   );
 };

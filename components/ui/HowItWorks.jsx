@@ -5,7 +5,7 @@ import React from "react";
 
 const HowItWorks = () => {
   return (
-    <section className="bg-[#FFFAF8] py-28  max-md:py-20 max-md:px-5">
+    <section className="py-28  max-md:py-20 max-md:px-5">
       <div className="mb-20 max-md:mb-16">
         <div className="flex-center gap-3">
           <Image
