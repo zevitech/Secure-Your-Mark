@@ -153,7 +153,6 @@ const page = () => {
       {/* protect your property */}
       <section className="w-full relative py-32 max-md:py-24 max-md:px-5 overflow-hidden">
         {/* Enhanced Background Elements */}
-       
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex items-center justify-between max-lg:flex-col max-lg:text-center gap-16">
@@ -417,7 +416,7 @@ const page = () => {
               attorneys help you file your trademark.
             </p>
             <div className="flex items-start justify-start flex-col gap-4 mt-9 max-md:mt-3">
-              <Link href="tel:+14082563271" className="flex-center">
+              <Link href="tel:+14082562372" className="flex-center">
                 <Image
                   src={`/images/orange-phone-icon.png`}
                   alt="Bell"

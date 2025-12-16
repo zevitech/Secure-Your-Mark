@@ -22,7 +22,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-5 mt-7 max-md:mt-3 max-md:flex-col max-md:items-start">
             <div className="flex flex-col gap-4">
-              <Link href="tel:+14082563271" className="flex items-center">
+              <Link href="tel:+14082562372" className="flex items-center">
                 <Image
                   src={`/images/orange-phone-icon.png`}
                   alt="Bell"
@@ -48,7 +48,8 @@ const Footer = () => {
                 <IoPin size={30} className="text-[#F25601]" />
                 <div className="flex flex-col">
                   <h4 className="text-color-primary text-base font-semibold">
-                    1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125, United States
+                    1060 Lincoln Ave Suite 20 #1071, San Jose, CA 95125, United
+                    States
                   </h4>
                   <p className="text-xs text-white">Physical Address</p>
                 </div>

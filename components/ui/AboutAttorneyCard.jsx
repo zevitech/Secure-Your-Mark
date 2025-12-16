@@ -3,7 +3,14 @@ import Link from "next/link";
 import React from "react";
 import { HiOutlineMail } from "react-icons/hi";
 
-const AboutAttorneyCard = ({ image, name, details, number, number02, email }) => {
+const AboutAttorneyCard = ({
+  image,
+  name,
+  details,
+  number,
+  number02,
+  email,
+}) => {
   return (
     <div className="flex-center even:flex-row-reverse max-md:even:flex-col gap-14 max-md:gap-8 max-md:flex-col">
       <Image alt="attorney" src={`/images/${image}`} width={300} height={500} />
@@ -40,7 +47,7 @@ const AboutAttorneyCard = ({ image, name, details, number, number02, email }) =>
               </div>
             </Link>
 
-            <Link href="tel:+14082563271" className="flex-center gap-2">
+            <Link href="tel:+14082562372" className="flex-center gap-2">
               <Image
                 src={`/images/orange-phone-icon.png`}
                 alt="Bell"

@@ -388,7 +388,7 @@ const page = () => {
               through a simple steps trademark registration process.
             </p>
             <div className="flex items-center gap-5 mt-7 max-md:mt-3">
-              <Link href="tel:+14082563271" className="flex-center">
+              <Link href="tel:+14082562372" className="flex-center">
                 <Image
                   src={`/images/orange-phone-icon.png`}
                   alt="Bell"
