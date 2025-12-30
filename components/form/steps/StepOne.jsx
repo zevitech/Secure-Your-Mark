@@ -445,6 +445,26 @@ const StepOne = () => {
       const response = await axios.post(endPoint, stepOneWithValues);
 
       if (response.data.success) {
+        // Push enhanced conversion data to Google Tag Manager for lead generation
+        if (typeof window !== "undefined" && window.dataLayer) {
+          window.dataLayer.push({
+            event: "generate_lead",
+            enhanced_conversion_data: {
+              email: email,
+              phone_number: phone,
+              address: {
+                first_name: firstName,
+                last_name: lastName,
+                street: address,
+                city: city,
+                region: state,
+                postal_code: zip,
+                country: "US",
+              },
+            },
+          });
+        }
+
         router.push("/trademark-register/step-2");
       } else {
         alert("Form submission failed. Please try again.");

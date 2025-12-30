@@ -89,6 +89,30 @@ const Payment = () => {
           setPaymentError("");
           leadDataWithValues.is_paid = true;
           leadDataWithValues.zoho_step = 3;
+
+          // Push enhanced conversion data to Google Tag Manager
+          if (typeof window !== "undefined" && window.dataLayer) {
+            window.dataLayer.push({
+              event: "purchase",
+              enhanced_conversion_data: {
+                email: leadDataWithValues.email,
+                phone_number: leadDataWithValues.phone,
+                address: {
+                  first_name: leadDataWithValues.firstName,
+                  last_name: leadDataWithValues.lastName,
+                  street: leadDataWithValues.address,
+                  city: leadDataWithValues.city,
+                  region: leadDataWithValues.state,
+                  postal_code: leadDataWithValues.zip,
+                  country: "US",
+                },
+              },
+              transaction_id: leadDataWithValues.receipt_ID || data.orderID,
+              value: totalAmount,
+              currency: "USD",
+            });
+          }
+
           axios
             .post(endPoint, leadDataWithValues)
             .then((res) => {
