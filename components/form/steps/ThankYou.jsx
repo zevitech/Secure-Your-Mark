@@ -20,6 +20,7 @@ const ThankYou = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [homeIsLoading, setHomeIsLoading] = useState(false);
   const stepThreeData = useSelector((state) => state.form.stepThree);
+  const conversionFiredRef = useRef(false);
 
   // page authorization | redirect if previous step has no data
   useEffect(() => {
@@ -27,6 +28,27 @@ const ThankYou = () => {
       router.push(process.env.NEXT_PUBLIC_APP_URL + "/trademark-register");
     }
   }, [stepThreeData, router]);
+
+  useEffect(() => {
+    if (!stepThreeData || Object.keys(stepThreeData).length === 0) return;
+    if (conversionFiredRef.current) return;
+    const txId = String(stepThreeData?.receipt_ID || "");
+    const value = Number(stepThreeData?.price) || 0;
+    const flagKey = `ads_conversion_${txId}`;
+    if (typeof window !== "undefined") {
+      if (sessionStorage.getItem(flagKey)) return;
+      sessionStorage.setItem(flagKey, "1");
+      conversionFiredRef.current = true;
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "conversion", {
+          send_to: "AW-16979187198/cYc6CMq_-90bEP6rp6A_",
+          value,
+          currency: "USD",
+          transaction_id: txId,
+        });
+      }
+    }
+  }, [stepThreeData]);
 
   // make image and the download the receipt as image
   const handleDownload = async () => {
