@@ -92,6 +92,16 @@ export default function RootLayout({ children }) {
             gtag('config', 'AW-16979187198');
           `}
         </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4V3XW7Q5EG"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-ga4-config" strategy="afterInteractive">
+          {`
+            gtag('js', new Date());
+            gtag('config', 'G-4V3XW7Q5EG');
+          `}
+        </Script>
       </head>
       <body className={`${poppins.className} ${inriaSerif.variable}`}>
         {/* Google Tag Manager (noscript) */}
