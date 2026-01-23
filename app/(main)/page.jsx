@@ -26,7 +26,7 @@ const page = () => {
   return (
     <main>
       <Header />
-      <section
+      {/* <section
         style={{ backgroundImage: `url('/images/sym-hero-bg-trademark.jpg')` }}
         className={`py-10 max-md:py-14 w-full h-[90vh] max-md:h-auto max-md:min-h-[70vh] max-md:pb-24 max-md:px-5 flex-center text-white bg-no-repeat bg-center bg-cover`}
       >
@@ -52,10 +52,129 @@ const page = () => {
 
           <SearchModal />
         </div>
+      </section> */}
+
+      <section className="max-w-full bg-white relative py-7">
+        {/* Diagonal Stripes Background */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(45deg, transparent, transparent 2px, #f3f4f6 2px, #f3f4f6 4px)",
+          }}
+        />
+
+        {/* Warm Orange Glow Top */}
+        <div
+          className="absolute inset-20 z-0"
+          style={{
+            background: "transparent",
+            backgroundImage: `
+              radial-gradient(
+                circle at top center,
+                rgba(255, 140, 60, 0.5),
+                transparent 50%
+              )
+            `,
+            filter: "blur(80px)",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
+          {/* Main Heading */}
+          <h1 className="text-3xl lg:text-5xl font-bold leading-tight max-w-4xl text-[#141C2F]">
+            Register a trademark for your Business
+            <br />
+            Name, Slogan, or Logo Starting at
+          </h1>
+
+          {/* Price */}
+          <p className="text-2xl md:text-3xl lg:text-4xl font-bold mt-3 text-[#0b206e]">
+            $35 + Federal Office Filing Fee
+          </p>
+
+          {/* Description */}
+          <p className="mt-6 text-base max-w-3xl leading-relaxed text-gray-500">
+            Start by filling out our simple trademark questionnaire, Affordable
+            Rates, Expert Legal Support,
+            <br className="hidden md:block" />
+            Get your serial number of trademark registration once your trademark
+            application is filed with us!
+          </p>
+
+          {/* CTA Button */}
+          <SearchModal />
+
+          {/* Trust Badges */}
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-8 md:gap-8">
+            <div className="h-20 w-44 flex items-center justify-center">
+              <img
+                src="/images/trustpilot-logo.png"
+                alt="Trustpilot"
+                className="h-full w-full object-contain"
+              />
+            </div>
+
+            <div className="h-20 w-44 flex items-center justify-center">
+              <img
+                src="/images/google-reviews.webp"
+                alt="Google Reviews"
+                className="h-full w-full object-contain"
+              />
+            </div>
+
+            <div className="h-20 w-44 flex items-center justify-center">
+              <img
+                src="/images/accredited-business.webp"
+                alt="Accredited Business"
+                className="h-full w-full object-contain"
+              />
+            </div>
+
+            <div className="h-20 w-44 flex items-center justify-center">
+              <img
+                src="/images/forbes-advisor.webp"
+                alt="Forbes Advisor"
+                className="h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
+      <div
+        className="w-full py-5 px-6 lg:px-12"
+        style={{
+          backgroundColor: "#E5E4E2",
+          borderRadius: "8px",
+          position: "relative",
+        }}
+      >
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-around gap-6 md:gap-0">
+          {/* Success Text */}
+          <p className="text-sm font-medium text-black">
+            Trademark applicants with US are 99%
+            <br className="md:hidden" /> more likely to succeed than those
+            without.
+          </p>
+
+          {/* Divider */}
+          <div className="hidden md:block h-10 w-px bg-black" />
+
+          {/* Client Logos */}
+          <div className="flex items-center gap-8 md:gap-12">
+            <img
+              src="/images/comp-logos.png"
+              alt="Client Logos"
+              className="h-24 w-auto object-contain md:h-20"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* packages */}
-      <section className="bg-[#F0F0F0] py-28  max-md:py-20 max-md:px-5">
+      <section className="bg-[#F0F0F0] py-28 max-md:py-20 max-md:px-5">
         <PackageSection />
       </section>
 
@@ -151,7 +270,7 @@ const page = () => {
       </section> */}
 
       {/* protect your property */}
-      <section className="w-full relative py-32 max-md:py-24 max-md:px-5 overflow-hidden">
+      <section className=" w-full relative py-32 max-md:py-24 max-md:px-5 overflow-hidden">
         {/* Enhanced Background Elements */}
 
         <div className="relative z-10 max-w-7xl mx-auto">

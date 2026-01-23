@@ -1,9 +1,24 @@
+"use client";
+
 import React from "react";
 import { Button } from "@nextui-org/react";
 import HeroBtn from "../buttons/HeroBtn";
-import Link from "next/link";
 
 const SearchModal = () => {
+  const openLiveChatWidget = () => {
+    // LiveChat widget - maximize the chat window
+    if (window.LiveChatWidget && typeof window.LiveChatWidget.call === 'function') {
+      window.LiveChatWidget.call('maximize');
+    }
+    // Fallback for older LiveChat API
+    else if (window.LC_API && typeof window.LC_API.open_chat_window === 'function') {
+      window.LC_API.open_chat_window();
+    }
+    else {
+      console.log('LiveChat widget is not loaded yet');
+    }
+  };
+
   return (
     <>
       <div className="relative w-[100%] max-md:w-full">
@@ -11,10 +26,9 @@ const SearchModal = () => {
           <HeroBtn />
 
           <Button
-            as={Link}
-            href="/trademark-register"
+            onPress={openLiveChatWidget}
             color="secondary"
-            className="px-12 py-8 rounded-[10px] text-md bg-color-secondary max-md:w-full font-inriaSerif font-[400]"
+            className="px-12 py-8 rounded-[10px] text-md bg-color-secondary max-md:w-full font-inriaSerif font-[400] cursor-pointer"
             radius="sm"
           >
             Live Chat
