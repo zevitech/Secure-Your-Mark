@@ -20,12 +20,12 @@ const HeroBtn = () => {
       as={Link}
       href="/trademark-register"
       color="primary"
-      className="px-12 py-8 rounded-[10px] text-md bg-color-primary max-md:w-full font-inriaSerif font-[400]"
+      className="px-6 md:px-12 py-8 rounded-[10px] text-sm md:text-md bg-color-primary max-md:w-full font-inriaSerif font-[400] whitespace-normal md:whitespace-nowrap"
       radius="sm"
       onClick={handleButton}
       isLoading={isLoading}
     >
-      Start Registration Now
+      <span className="text-center">Start Registration Now</span>
     </Button>
   );
 };

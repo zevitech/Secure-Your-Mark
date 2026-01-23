@@ -7,15 +7,20 @@ import HeroBtn from "../buttons/HeroBtn";
 const SearchModal = () => {
   const openLiveChatWidget = () => {
     // LiveChat widget - maximize the chat window
-    if (window.LiveChatWidget && typeof window.LiveChatWidget.call === 'function') {
-      window.LiveChatWidget.call('maximize');
+    if (
+      window.LiveChatWidget &&
+      typeof window.LiveChatWidget.call === "function"
+    ) {
+      window.LiveChatWidget.call("maximize");
     }
     // Fallback for older LiveChat API
-    else if (window.LC_API && typeof window.LC_API.open_chat_window === 'function') {
+    else if (
+      window.LC_API &&
+      typeof window.LC_API.open_chat_window === "function"
+    ) {
       window.LC_API.open_chat_window();
-    }
-    else {
-      console.log('LiveChat widget is not loaded yet');
+    } else {
+      console.log("LiveChat widget is not loaded yet");
     }
   };
 
