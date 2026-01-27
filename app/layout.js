@@ -79,9 +79,9 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* New Google Tag Manager Script */}
+        {/* Google tag (gtag.js) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16979187198"
+          src="https://www.googletagmanager.com/gtag/js?id=G-4V3XW7Q5EG"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -89,17 +89,8 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-16979187198');
-          `}
-        </Script>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4V3XW7Q5EG"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-ga4-config" strategy="afterInteractive">
-          {`
-            gtag('js', new Date());
             gtag('config', 'G-4V3XW7Q5EG');
+            gtag('config', 'AW-16979187198');
           `}
         </Script>
       </head>
