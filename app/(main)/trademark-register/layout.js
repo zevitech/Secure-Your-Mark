@@ -15,65 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm"
-          type="text/javascript"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-PXZMCZM2');`,
-          }}
-        />
-
-        {/* MouseFlow Tracking */}
-        <Script
-          id="mouseflow"
-          type="text/javascript"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window._mfq = window._mfq || [];
-            (function() {
-              var mf = document.createElement("script");
-              mf.type = "text/javascript"; 
-              mf.defer = true;
-              mf.src = "//cdn.mouseflow.com/projects/7ded44f5-ebf3-445d-b673-1936a00b32d4.js";
-              document.getElementsByTagName("head")[0].appendChild(mf);
-            })();
-           `,
-          }}
-        />
-
-        {/* New Google Tag Manager Script */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16979187198"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16979187198');
-          `}
-        </Script>
+        {/* MouseFlow Tracking - inherited from parent layout */}
+        {/* Google Analytics & Ads tracking - inherited from parent layout */}
       </head>
 
       <body className={`${inter.className}`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PXZMCZM2"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-
         {/* Live Chat (noscript) */}
         {/* <noscript>
           <a href="https://www.livechat.com/chat-with/19119842/" rel="nofollow">
