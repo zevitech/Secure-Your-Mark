@@ -1,7 +1,6 @@
 import FormHero from "@/components/form/FormHero";
 import ThankYou from "@/components/form/steps/ThankYou";
 import ConversionTracker from "@/components/tracking/ConversionTracker";
-import Script from "next/script";
 
 export const metadata = {
   title: "Thank You - Register Trademark | Secure Your Mark",
@@ -10,24 +9,15 @@ export const metadata = {
 };
 
 const page = () => {
+  // You can dynamically pass value if needed
+  // For example, get it from URL params or server-side props
+  const conversionValue = 35.0; // or get from payment data
+
   return (
     <>
-      {/* Event snippet for Order conversion page */}
-      <Script
-        id="conversion-event"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            gtag('event', 'conversion', {
-              'send_to': 'AW-16979187198/cYc6CMq_-90bEP6rp6A_',
-              'value': 35.0,
-              'currency': 'USD',
-              'transaction_id': 'TM-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9)
-            });
-          `,
-        }}
-      />
-      <ConversionTracker />
+      {/* Single source of conversion tracking */}
+      <ConversionTracker value={conversionValue} currency="USD" />
+
       <main className="mb-10">
         <FormHero />
         <ThankYou />

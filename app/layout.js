@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Global Site Tag */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4V3XW7Q5EG"
           strategy="afterInteractive"
@@ -89,8 +89,15 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
+            // Google Analytics 4
             gtag('config', 'G-4V3XW7Q5EG');
+
+            // Google Ads Conversion Tracking
             gtag('config', 'AW-16979187198');
+
+            // Mark gtag as ready
+            window.gtagReady = true;
           `}
         </Script>
       </head>
