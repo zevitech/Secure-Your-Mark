@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Microsoft Clarity - inherited from parent layout */}
         {/* MouseFlow Tracking - inherited from parent layout */}
         {/* Google Analytics & Ads tracking - inherited from parent layout */}
       </head>

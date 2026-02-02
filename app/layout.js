@@ -49,6 +49,22 @@ export default function RootLayout({ children }) {
         {/* Google Tag Manager - REMOVED (using direct gtag.js instead for cleaner conversion tracking) */}
         {/* GTM was conflicting with direct gtag.js and loading wrong conversion IDs */}
 
+        {/* Microsoft Clarity */}
+        <Script
+          id="clarity"
+          type="text/javascript"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "nuzgup0wwa");
+           `,
+          }}
+        />
+
         {/* MouseFlow Tracking */}
         <Script
           id="mouseflow"
@@ -59,7 +75,7 @@ export default function RootLayout({ children }) {
             window._mfq = window._mfq || [];
             (function() {
               var mf = document.createElement("script");
-              mf.type = "text/javascript"; 
+              mf.type = "text/javascript";
               mf.defer = true;
               mf.src = "//cdn.mouseflow.com/projects/7ded44f5-ebf3-445d-b673-1936a00b32d4.js";
               document.getElementsByTagName("head")[0].appendChild(mf);
