@@ -75,6 +75,11 @@ const Footer = () => {
           </form>
         </div>
       </div>
+      <div className="bg-slate-800 text-slate-400 text-center text-xs px-6 py-4 max-w-4xl mx-auto w-full">
+        <p className="leading-relaxed">
+          <span className="font-semibold text-slate-300">Disclaimer:</span> We are an independent trademark filing support service. We are not a government agency and are not affiliated with the USPTO. We assist business owners by preparing and submitting trademark applications directly to the USPTO on their behalf.
+        </p>
+      </div>
       <div className="bg-color-primary text-slate-200 text-center text-sm p-5">
         <p>
           ©Copyright & All Rights Reserved by{" "}
